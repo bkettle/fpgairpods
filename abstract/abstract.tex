@@ -7,10 +7,10 @@
 {\Huge \sffamily \textbf{FPGAirPods} Project Abstract}
 
 \vspace{2mm}
-{\sffamily Ben Kettle, Gokul Kolady, Niko Ramirez | \today \ | 6.111}
+{\sffamily Gokul Kolady, Ben Kettle, Niko Ramirez | \today \ | 6.111}
 \vspace{5mm}
 
-Our project will implement real-time active noise cancellation. In order to do this, we plan on initially building a test device that will most likely resemble a simplified model of a single earpiece. We will collect data from an external microphone, a microphone inside the "earpiece," and a music input from the user. On the FPGA, we will process the data to identify background noise from the external microphone and modify the music being inputted to add a signal to cancel out the background noise that our system anticipates will make it through the case. We anticipate creating a model of the case's acoustics by comparing the output from the external microphone to the output of the internal microphone. After processing the data, we will perform error correction to remove any noise that we did not expect in the future.  
+Our project will implement real-time active noise cancellation. In order to do this, we plan on initially building a test device that will most likely resemble a simplified model of a single earpiece. We will collect data from an external microphone, a microphone inside the "earpiece," and a music input from the user. On the FPGA, we will process the data to identify background noise from the external microphone and modify the music being inputted to add a signal to cancel out the background noise that our system anticipates will make it through the case. We anticipate creating a model of the case's acoustics by comparing the output of the external microphone to the output of the internal microphone. After processing the data, we will perform error correction to prevent any unexpected noise from making it through in the future. 
 
 Possible expansions (which have not been thoroughly explored in difficulty) include support for stereo audio, bluetooth audio input, keyword recognition to enable/disable noise cancelling, and a "transparency mode" to counteract the acoustic muffling of the case with the goal of sounding as though there is no case at all.
 \end{document}
