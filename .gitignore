@@ -1,3 +1,6 @@
+# Ignore reference files
+reference/*
+
 # LaTeX
 ## Core latex/pdflatex auxiliary files:
 *.aux
