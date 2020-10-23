@@ -2,8 +2,28 @@
 \usepackage[letterpaper, margin=1in]{geometry}
 \usepackage{times}
 \usepackage{helvet}
+\usepackage{courier}
+\usepackage{color}
 \usepackage{multicol}
 \usepackage{lipsum}
+\usepackage{listings}
+\usepackage{fancyhdr}
+\usepackage[%  
+    colorlinks=true,
+    pdfborder={0 0 0},
+    linkcolor=blue
+]{hyperref}
+\usepackage[all]{hypcap}
+\usepackage{float}
+\usepackage{textcomp}
+\usepackage{placeins}
+\usepackage[%
+  autocite    = superscript,
+  backend     = bibtex,
+  sortcites   = true,
+  style       = numeric,
+]{biblatex}
+\addbibresource{proposal.bib}
 
 \begin{document}
 
@@ -16,5 +36,7 @@
 \begin{multicols}{2}
 	\lipsum
 \end{multicols}
+
+\printbibliography
 
 \end{document}
