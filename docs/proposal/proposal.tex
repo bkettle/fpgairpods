@@ -1,31 +1,7 @@
-\documentclass[12pt]{article}
+\documentclass[12pt]{fpgairpods}
 \usepackage[letterpaper, margin=1in]{geometry}
-\usepackage{times}
-\usepackage{helvet}
-\usepackage{courier}
-\usepackage{color}
-\usepackage{multicol}
-\usepackage{lipsum}
-\usepackage{listings}
-\usepackage{graphicx}
-\usepackage{fancyhdr}
-\usepackage{enumitem}
-\usepackage[%  
-    colorlinks=true,
-    pdfborder={0 0 0},
-    linkcolor=blue
-]{hyperref}
-\usepackage[all]{hypcap}
-\usepackage{float}
-\usepackage{textcomp}
-\usepackage{placeins}
-\usepackage[%
-  autocite    = superscript,
-  backend     = bibtex,
-  sortcites   = true,
-  style       = numeric,
-]{biblatex}
 \addbibresource{proposal.bib}
+\graphicspath{{figs/}}
 
 \setlist{noitemsep, topsep=0pt}
 
@@ -37,6 +13,7 @@
 {Gokul Kolady, Ben Kettle, Niko Ramirez | \today \ | 6.111}
 \vspace{5mm}
 
+
 \begin{multicols}{2}
 \section{Overview}
 Our 6.111 final project aims to implement active noise cancellation as seen in over- and in-ear headphones such as the Bose QC35 and the AirPods Pro (hence the name). In order to do this, we will first need to create a physical model of a single headphone (one ear cup) that we will use to test. Inside the ear cup, we will install a speaker (far from the ear) and a digital microphone (closer to the ear). We will also use a digital microphone external to the ear cup in order to capture ambient noise.
@@ -44,6 +21,8 @@ Our 6.111 final project aims to implement active noise cancellation as seen in o
 The FPGA itself will handle the computational side of the active noise cancellation. This will primarily involve an adaptive filter that will continually improve its coefficients in order to minimize the error function--ie, the noise that makes it through and is not cancelled out. We run the input from the external microphone through this filter, and play the filtered result out of the speaker with the aim of cancelling noise.
 
 \section{Materials}
+
+
 Several materials will be used in order to construct a prototype "headphone" to test on: 
 \begin{itemize}
     \item 2x \href{https://www.adafruit.com/product/3421}{SPH0645LM4H microphone breakout boards} from Adafruit will be used to collect noise from inside and outside the ear cup. These communicate via I2S, which will remove the need for ADCs between the microphone and the FPGA, and minimize potential for noise in the wires from the FPGA to the earpiece.
@@ -56,9 +35,18 @@ Several materials will be used in order to construct a prototype "headphone" to 
 \end{multicols}
 
 
-\section{Block Diagram}
+\begin{figure}
+\def\svgwidth{\linewidth}
+\input{./figs/system_diagram.pdf_tex}
+\caption{The peripherals that will be included in our project}
+\label{fig:peripherals}
+\end{figure}
 
-\includegraphics[width=\textwidth]{docs/proposal/images/Proposal Block Diagram.png}
+\begin{figure}
+\includegraphics[width=\textwidth]{Proposal Block Diagram.png}
+\caption{The high-level block diagram for our system.}
+\label{fig:blockdiagram}
+\end{figure}
 
 
 \newpage
