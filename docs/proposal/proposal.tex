@@ -93,18 +93,17 @@ blah
 blah
 
 \subsection{LMS Adaptive Algorithm}
-This module uses the LMS adaptive algorithm in order to update the coefficients of the FIR Filter for better noise cancellation. This algorithm takes advantage of the steepest descent optimization method, which analyzes the impact of the previous filter coefficients on the observed error and computes appropriate adjustments. This update is accomplished using the following equation:
+This module uses the LMS adaptive algorithm in order to update the coefficients of the FIR Filter for better noise cancellation. This algorithm takes advantage of the steepest descent optimization method, which analyzes the impact of the previous filter coefficients on the observed error and computes appropriate adjustments. This update is accomplished using the following equation, where $b_k(n)$ is the FIR coefficient for a given $k$ values and a given timestep $n$, $\Lambda$ is a predefined step size or learning rate that defines how quickly the filter weights change, and $f(n)$ is the value of the noise signal from the external microphone at a timestep $n$:
 
-$$b_k(n + 1) = b_k(n) + \Lambda e(n)f(n-k)$$
-$$k = 0, 1, 2,... M-1$$
+\[ b_k(n + 1) = b_k(n) + \Lambda e(n)f(n-k) \]
+\[ k = 0, 1, 2,\ldots,  M-1 \]
 
-VARIABLE DESCRIPTIONS
 \subsubsection{Inputs}
 blah
 \subsubsection{Outputs}
 blah
 \subsubsection{Complexity}
-blah
+To implement this operation, we will need to store the last $M$ noise inputs from the external microphone along with the full last set of filter coefficients. This will require two BRAMs of size $w_S M$ and $w_C M$ respectively, where $w_S = 16$ is the bit depth of our samples from the external microphone, and $w_C$ is the bit depth of the coefficients.
 \subsubsection{Level of Performance}
 blah
 \subsubsection{Testing}
