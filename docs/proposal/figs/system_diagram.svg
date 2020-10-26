@@ -93,7 +93,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -270,15 +270,15 @@
        y="167.94383"
        id="text3186-6"><tspan
          sodipodi:role="line"
-         id="tspan3184-2"
          x="70.888367"
          y="167.94383"
-         style="font-size:2.11667px;stroke-width:0.264583">I2S &amp;</tspan><tspan
+         style="font-size:2.11667px;stroke-width:0.264583"
+         id="tspan3226">analog </tspan><tspan
          sodipodi:role="line"
          x="70.888367"
          y="170.58968"
          style="font-size:2.11667px;stroke-width:0.264583"
-         id="tspan3226">power</tspan></text>
+         id="tspan999">&amp; power</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.11667px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
