@@ -25,13 +25,14 @@ The FPGA itself will handle the computational side of the active noise cancellat
 
 Several materials will be used in order to construct a prototype "headphone" to test on: 
 \begin{itemize}
-    \item 2x \href{https://www.adafruit.com/product/3421}{SPH0645LM4H microphone breakout boards} from Adafruit will be used to collect noise from inside and outside the ear cup. These communicate via I2S, which will remove the need for ADCs between the microphone and the FPGA, and minimize potential for noise in the wires from the FPGA to the earpiece.
-    \item \href{https://www.adafruit.com/product/3968}{Speaker}
-    \item \href{https://www.adafruit.com/product/3006}{Amplifier}? We could put this inside the cup, or we might be able to use the onboard amplifier on the FPGA--I'm not sure.
-    \item Cup
-    \item Foam
-    \item Wire
+    \item 2x \href{https://www.adafruit.com/product/3421}{SPH0645LM4H microphone breakout boards} (\$7) from Adafruit will be used to collect noise from inside and outside the ear cup. These communicate via I2S, which will remove the need for ADCs between the microphone and the FPGA, and minimize potential for noise in the wires from the FPGA to the earpiece.
+    \item 1x \href{https://www.adafruit.com/product/3968}{Speaker} (\$5) in order to play the anti-noise signal that we calculate into the user's ear. This is a 3W speaker, which should give adequate power.
+    \item 1x \href{https://www.adafruit.com/product/3006}{I2S Amplifier} will be used to convert the digital output signal from the FPGA into an analog output signal to pass to the speaker.
+    \item We will use a cup of some kind to mount all of these on.
+    \item We'll create some passive noise insulation using some \href{https://www.amazon.com/Silverstone-21-Inch-Dampening-Acoustic-SF01/dp/B0040JHMH6?th=1}{foam}.
+    \item We'll need some wire to connect the microphones and the speaker.
 \end{itemize}
+
 \end{multicols}
 
 
@@ -52,8 +53,8 @@ Several materials will be used in order to construct a prototype "headphone" to 
 \newpage
 \section{Modules}
 \begin{multicols}{2}
-\subsection{I2S - \textit{IP}}
-This module will parse the incoming data stream from each of the two microphones. Can be implemented with IP.
+\subsection{I2S Receiver - \textit{IP}}
+This module will parse the incoming data stream from each of the two microphones. We can either implement it using the Vivado I2S IP, or implement it ourselves. For our purposes, it may be more resource efficient to implement it ourselves.
 \subsubsection{Inputs}
 \begin{itemize}
     \item SDA - Microphone Data
@@ -79,7 +80,7 @@ blah
 blah
 \subsubsection{Testing}
 blah
-
+]
 \subsection{LMS Adaptive Algorithm}
 This module uses the LMS adaptive algorithm in order to update the coefficients of the FIR Filter for better noise cancellation. This algorithm takes advantage of the steepest descent optimization method, which analyzes the impact of the previous filter coefficients on the observed error and computes appropriate adjustments. This update is accomplished using the following equation, where $b_k(n)$ is the FIR coefficient for a given $k$ values and a given timestep $n$, $\Lambda$ is a predefined step size or learning rate that defines how quickly the filter weights change, and $f(n)$ is the value of the noise signal from the external microphone at a timestep $n$:
 
@@ -95,7 +96,7 @@ To implement this operation, we will need to store the last $M$ noise inputs fro
 \subsubsection{Level of Performance}
 blah
 \subsubsection{Testing}
-blah
+Testing this module will be a bit more involved than some of the others due to its not well-defined behavior, but in order to test the behavior we will need to have a working FIR module. With this module in place, we can then test the ability of the LMS algorithm to recreate the coefficients of a given filter. In other words, we can have our "desired" signal be the result of passing some input through an arbitrary filter, use this desired signal to calculate the error $e(n)$, and pass this error into our LMS module. If the input of the LMS module is the same as the input to this mystery filter, 
 
 \subsection{Error Calculator - \textit{Owners}}
 The error calculator computes the difference between the output of the internal microphone (the sound within the ear cup) and the intended final audio. If we reach our stretch goal, the intended audio will be the music being inputted into the system. Otherwise, the goal will be silence. This difference or "error" will be fed into the LMS modules for error correction.
