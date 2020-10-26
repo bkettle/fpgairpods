@@ -62,7 +62,7 @@
     \put(0.22904423,0.74758434){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}speaker\\\& amp\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{system_diagram.pdf}}%
     \put(0.0172798,0.1495565){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}I2S\end{tabular}}}}%
-    \put(0.15638594,0.20539864){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}I2S \&\\power\end{tabular}}}}%
+    \put(0.15638594,0.20539864){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}analog \\\& power\end{tabular}}}}%
     \put(0.443346,0.08993101){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}I2S\\\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{system_diagram.pdf}}%
     \put(0.3942029,0.78846852){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}cup\\enclosure\end{tabular}}}}%
