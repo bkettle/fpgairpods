@@ -1,4 +1,4 @@
-\LoadClass{article}
+\LoadClass[12pt]{article}
 \ProvidesClass{fpgairpods}[2020/10/25 6.111 Team 25 Document Template]
 
 \RequirePackage[explicit]{titlesec}
@@ -8,6 +8,7 @@
 \RequirePackage{courier}
 \RequirePackage{color}
 \RequirePackage{multicol}
+\RequirePackage{amsmath}
 \RequirePackage{lipsum}
 \RequirePackage{listings}
 \RequirePackage{graphicx}
@@ -37,3 +38,5 @@
 \titlespacing{\section}{0pt}{10pt}{6pt}
 \titlespacing{\subsection}{0pt}{10pt}{0pt}
 \titlespacing{\subsubsection}{0pt}{4pt}{0pt}
+
+\newcommand{\ttt}[1]{{\tt \detokenize{#1}}}
