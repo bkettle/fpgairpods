@@ -1,5 +1,6 @@
 \documentclass{fpgairpods}
 \usepackage[letterpaper, margin=1in]{geometry}
+
 \addbibresource{proposal.bib}
 \graphicspath{{figs/}}
 
@@ -37,8 +38,7 @@ Several materials will be used in order to construct a prototype "headphone" to 
 
 \begin{figure}[h]
 \centering
-\def\svgwidth{200pt}
-\input{./figs/system_diagram.pdf_tex}
+\includegraphics[width=300pt]{./figs/system_diagram_with_text.pdf}
 \caption{The peripherals that will be included in our project}
 \label{fig:peripherals}
 \end{figure}
@@ -96,13 +96,14 @@ This module will be time sensitive, as we will want to calculate the output corr
 Testing for this module will consist of simple inputs similar to those seen in Lab 5a with known filter coefficients, such as a low pass filter with an impulse input, a sine input, etc. If these show the results that we expect, we can conclude that the FIR filter works. Later, we will also test it in conjunction with the LMS.
 
 \subsection{LMS Adaptive Alg. - \textit{Ben \& Gokul}}
-This module uses the LMS adaptive algorithm in order to update the coefficients of the FIR Filter for better noise cancellation. This algorithm takes advantage of the steepest descent optimization method, which analyzes the impact of the previous filter coefficients on the observed error and computes appropriate adjustments. This update is accomplished using the following equation, where $b_k(n)$ is the FIR coefficient for a given $k$ values and a given timestep $n$, $\Lambda$ is a predefined step size or learning rate that defines how quickly the filter weights change, $e(n)$ is the calculated error, and $f(n)$ is the value of the noise sample from the external microphone at a timestep $n$:
+This module uses the LMS adaptive algorithm in order to update the coefficients of the FIR Filter for better noise cancellation. This algorithm takes advantage of the steepest descent optimization method, which analyzes the impact of the previous filter coefficients on the observed error and computes appropriate adjustments. This update is accomplished using the following equation\cite{lmsfilter}, where $b_k(n)$ is the FIR coefficient for a given $k$ values and a given timestep $n$, $\Lambda$ is a predefined step size or learning rate that defines how quickly the filter weights change, $e(n)$ is the calculated error, and $f(n)$ is the value of the noise sample from the external microphone at a timestep $n$:
 
 \[ b_k(n + 1) = b_k(n) + \Lambda e(n)f(n-k) \]
 \[ k = 0, 1, 2,\ldots,  M-1 \]
 
 \subsubsection{Inputs}
 \begin{itemize}
+    \item \ttt{external_signal_in[15:0]}: The current sample from the external microphone (previous samples get used in weight update formula, so they must be stored in this module).
     \item \ttt{error_in[15:0]}: The error between the internal microphone signal and the desired signal.
 \end{itemize}
 \subsubsection{Outputs}
@@ -194,7 +195,11 @@ This would aim to achieve the opposite purpose of the noise cancelling, working 
 \subsection{Toggle Keyword Recognition}
 Use microphone input to recognize when someone near the user speaks the user's name and switch to transparency mode. The idea is that when someone needs the user's attention, the headphones intelligently switches to transparency mode to allow the user to clearly hear their surroundings.
 
+\section{References}
+\vspace{-7mm}
 \printbibliography
+
 \end{multicols*}
+
 
 \end{document}
