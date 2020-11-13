@@ -6,6 +6,9 @@ This is a final project for MIT 6.111 Introductory Digital Systems Laboratory by
 ## Setting up the Vivado Project
 Vivado is funky with source control so this uses the process outlined [here](http://www.fpgadeveloper.com/2014/08/version-control-for-vivado-projects.html) to try to make it neater. Basically, it just means keeping all the source files separate, then generating a script with vivado that allows you to rebuild the project later. 
 
+### Setting up local vivado project
+There isn't a vivado project stored in the git repo, just the files needed to generate one. To generate, open vivado, click "window" at the top, then "tcl console". 
+
 ### Creating new files
 Rather than creating files inside the Vivado project directory tree like we did in the labs, we will put them inside of the `vivado/hdl` directory tree---so we should never save anything to the tree that vivado generates. So when you create a new file, either create it on the command line or something, or just manually specify the location in Vivado to make sure it goes in the `vivado/hdl` folder. 
 
