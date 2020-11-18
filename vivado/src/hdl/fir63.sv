@@ -31,7 +31,7 @@ module fir63(
                 // running sum of coeff * samples[offset-index[
                 accumulator <= accumulator + weights_in[index]*sample[offset-index];
                 index<= index + 1;
-            end else signal_out <= accumulator[25:18];
+            end else signal_out <= accumulator[25:10];
        end
     end
   end

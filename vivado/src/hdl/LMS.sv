@@ -24,14 +24,14 @@ module LMS(
     always_ff @(posedge clk_in) begin
         //if rst_in, reset coefficients
         if (rst_in) begin
-            for(int i = 0; i < ARRAY_SIZE; i++) temp_coeffs[i] <= 35'd67108864;
+            for(int i = 0; i < ARRAY_SIZE; i++) temp_coeffs[i] <= 35'd0;
             done <= 0;
         end else begin
             //if ready for LMS computation, update all 64 coefficients using gradient descent approximation
             if (ready_in) begin
                     for (int k = 0; k < ARRAY_SIZE; k++) begin
-                        if (offset_in >= k) temp_coeffs[k] <= temp_coeffs[k] + ((error_in[15:13]*sample_in[offset_in-k]));
-                        if (offset_in < k) temp_coeffs[k] <= temp_coeffs[k] + ((error_in[15:13]*sample_in[64+offset_in-k]));
+                        if (offset_in >= k) temp_coeffs[k] <= temp_coeffs[k] + ((error_in*sample_in[offset_in-k]) >>> 13);
+                        if (offset_in < k) temp_coeffs[k] <= temp_coeffs[k] + ((error_in*sample_in[64+offset_in-k]) >>> 13);
                     end
                     done <= 1;
             end else begin

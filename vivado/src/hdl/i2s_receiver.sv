@@ -11,8 +11,8 @@ module i2s_receiver(
 		output logic i2s_lrclk_out, // select the left or right channel
 		// datasheet tells us the above must be BCLK/64
 
-		output logic [15:0] left_sample_out, // the left channel's sample
-		output logic [15:0] right_sample_out, // the right channel's sample
+		output logic signed [15:0] left_sample_out, // the left channel's sample
+		output logic signed [15:0] right_sample_out, // the right channel's sample
 		output logic new_sample_out // a pulse 1 cycle long when new samples are out
 	);
 
@@ -84,7 +84,7 @@ module i2s_receiver(
 			// on the falling edge of the BCLK
 			// we only want to save the least significant 16 bits that come in
 			// since we're storing in a 16 bit thing and shifting, this will do that
-			if (!i2s_bclk_out && bit_counter <= 17) begin
+			if (!i2s_bclk_out && bit_counter <= 15) begin
 				case (i2s_lrclk_out)
 					// lrclk is 0 -> left transmitting
 					// save current incoming bit in lsb, shift the rest

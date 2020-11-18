@@ -35,8 +35,8 @@ module top_level(
 	logic i2s_data_in; assign i2s_data_in = ja2;
 	logic i2s_bclk_out; assign ja3 = i2s_bclk_out;
 
-	logic [15:0] test_sample_left;
-	logic [15:0] test_sample_right;
+	logic signed [15:0] test_sample_left;
+	logic signed [15:0] test_sample_right;
 	assign led[0] = i2s_data_in;
 	assign led[1] = i2s_bclk_out;
 	assign led[2] = i2s_lrclk_out;
@@ -56,17 +56,19 @@ module top_level(
 		.new_sample_out(sample_pulse) // a pulse 1 cycle long when new samples are out
 	);
 	
-	logic [7:0] speaker_out;
-	logic [7:0] speaker_out_switched;
+	logic signed [15:0] speaker_out;
+	logic signed [15:0] speaker_mid;
+	logic signed [7:0] speaker_out_switched;
 	logic [7:0] vol_out;
 	assign aud_sd = 1;
 	logic pwm_val; //pwm signal (HI/LO)
 	
 	always_comb begin
-	   speaker_out_switched = sw[0]?speaker_out: 0;
+	   speaker_mid = sw[0]?(speaker_out <<< 6): 0;
+	   speaker_out_switched = speaker_mid[15:8];
 	end
 	
-	volume_control vc (.vol_in(3'b111),
+	volume_control vc (.vol_in(sw[15:13]),
                        .signal_in(speaker_out_switched), .signal_out(vol_out));
     pwm (.clk_in(clk_100mhz), .rst_in(btnd), .level_in({~vol_out[7],vol_out[6:0]}), .pwm_out(pwm_val));
     assign aud_pwm = pwm_val?1'bZ:1'b0;
@@ -110,7 +112,8 @@ module top_level(
 		.probe0(test_sample_left),
 		.probe1(test_sample_right),
 		.probe2(speaker_out_switched),
-		.probe3(sample_pulse)
+		.probe3(sample_pulse),
+		.probe4(speaker_out)
 	);
     
 endmodule
