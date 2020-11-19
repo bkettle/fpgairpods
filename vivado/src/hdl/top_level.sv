@@ -1,7 +1,6 @@
 `timescale 1ns / 1ps
 
-module top_level(
-    input clk_100mhz,
+module top_level( input clk_100mhz,
     input [15:0] sw,
     input btnc, btnu, btnd, btnr, btnl,
     input vauxp3,
@@ -82,7 +81,8 @@ module top_level(
                            .offset(offset));
     
     //initialize error calculator instance
-    error_calculator find_error(.feedback_in(test_sample_left),//[25:10]),
+		logic [15:0] test_error; assign test_error = speaker_out + test_sample_right;
+    error_calculator find_error(.feedback_in(test_error),//[25:10]),
                                 .error_out(error),
                                 .nc_on(sw[0]),
                                 .clk_in(clk_100mhz));
@@ -111,9 +111,9 @@ module top_level(
 		.clk(clk_100mhz),
 		.probe0(test_sample_left),
 		.probe1(test_sample_right),
-		.probe2(speaker_out_switched),
+		.probe2(speaker_out),
 		.probe3(sample_pulse),
-		.probe4(speaker_out)
+		.probe4(speaker_out_switched)
 	);
     
 endmodule

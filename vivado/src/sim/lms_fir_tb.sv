@@ -9,14 +9,14 @@ module lms_fir_tb();
   logic signed [15:0] x;
   logic signed [15:0] y;
   logic [20:0] scount;    // keep track of which sample we're at
-  logic [8:0] cycle;      // wait 64 clocks between samples
+  logic [6:0] cycle;      // wait 64 clocks between samples
   integer fin,fout,code;
 
   initial begin
     // open input/output files
     //CHANGE THESE TO ACTUAL FILE NAMES!YOU MUST DO THIS
     //fin = $fopen("sine2_10bits.waveform","r");
-    fin = $fopen("sine_148_10bits.waveform","r");
+    fin = $fopen("sine_50_10bits.waveform","r");
     fout = $fopen("fir31.output","w");
     if (fin == 0 || fout == 0) begin
       $display("can't open file...");
@@ -38,7 +38,7 @@ module lms_fir_tb();
   always #5 clk = ~clk;
 
   always @(posedge clk) begin
-    if (cycle == 9'd511) begin
+    if (cycle == 7'd127) begin
       // assert ready next cycle, read next sample from file
       ready <= 1;
       code = $fscanf(fin,"%d",x);
@@ -54,14 +54,22 @@ module lms_fir_tb();
 
     if (ready) begin
       // starting with sample 64, record results in output file
-      if (scount > 255) $fdisplay(fout,"%d",y);
+      if (scount > 63) $fdisplay(fout,"%d",y);
       scount <= scount + 1;
     end
 
     cycle <= cycle+1;
   end
 
-  top_level dut(.clk_in(clk),.rst_in(reset),.ready_in(ready),
-            .x_in(x-1700),.y_out(y));
+	logic [15:0] shifted_x;
+	assign shifted_x = x + 1700;
+
+	logic [15:0] filtered_x;
+	logic lowpass_finished;
+//	remove_dc dc_remover(.clk(clk), .reset(reset), .signal_in(shifted_x), .signal_out(dc_removed));
+	lowpass lowpass(.clk_in(clk), .rst_in(reset), .ready_in(ready), .signal_in(shifted_x), .signal_out(filtered_x), .done_out(lowpass_finished));
+
+  lms_test_top_level dut(.clk_in(clk),.rst_in(reset),.ready_in(lowpass_finished),
+            .x_in(filtered_x),.y_out(y));
 
 endmodule
