@@ -3,12 +3,12 @@
 module sampler(
   input  clk_in,rst_in, ready_in,
   input signed [15:0] signal_in,
-  output logic signed [15:0] sample_out [63:0],
-  output logic [5:0] offset
+  output logic signed [15:0] sample_out [255:0],
+  output logic [7:0] offset
 );
   
   // parameters used in ff
-  parameter SAMPLES_SIZE= 64;
+  parameter SAMPLES_SIZE= 256;
   
   always_ff @(posedge clk_in) begin
     if (rst_in) begin
