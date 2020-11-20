@@ -106,8 +106,8 @@ module top_level( input clk_100mhz,
                      .weights_in(coeffs),
                      .signal_out(speaker_out));
     
-    // ILA TO CHECK I2S
-	ila_0 i2s_ila (
+  // ILA TO CHECK I2S
+	ila_0 top_ila (
 		.clk(clk_100mhz),
 		.probe0(test_sample_left),
 		.probe1(test_sample_right),

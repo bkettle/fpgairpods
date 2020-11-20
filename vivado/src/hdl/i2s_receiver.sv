@@ -29,17 +29,17 @@ module i2s_receiver(
 	// assign i2s_lrclk_out = bit_counter[5];
 
 	// ILA TO CHECK I2S
-//	ila_0 i2s_ila (
-//		.clk(clock_in),
-//		.probe0(i2s_data_in),
-//		.probe1(left_sample_out),
-//		.probe2(right_sample_out),
-//		.probe3(clk_counter),
-//		.probe4(bit_counter),
-//		.probe5(new_sample_out),
-//		.probe6(i2s_lrclk_out),
-//		.probe7(i2s_bclk_out)
-//	);
+	i2s_ila i2s_ila (
+		.clk(clock_in),
+		.probe0(i2s_data_in),
+		.probe1(left_sample_out),
+		.probe2(right_sample_out),
+		.probe3(clk_counter),
+		.probe4(bit_counter),
+		.probe5(new_sample_out),
+		.probe6(i2s_lrclk_out),
+		.probe7(i2s_bclk_out)
+	);
 
 	always_ff @(posedge clock_in) begin
 		if (reset_in) begin

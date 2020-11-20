@@ -64,12 +64,7 @@ module lms_fir_tb();
 	logic [15:0] shifted_x;
 	assign shifted_x = x + 1700;
 
-	logic [15:0] filtered_x;
-	logic lowpass_finished;
-//	remove_dc dc_remover(.clk(clk), .reset(reset), .signal_in(shifted_x), .signal_out(dc_removed));
-	lowpass lowpass(.clk_in(clk), .rst_in(reset), .ready_in(ready), .signal_in(shifted_x), .signal_out(filtered_x), .done_out(lowpass_finished));
 
-  lms_test_top_level dut(.clk_in(clk),.rst_in(reset),.ready_in(lowpass_finished),
-            .x_in(filtered_x),.y_out(y));
+  lms_test_top_level dut(.clk_in(clk),.rst_in(reset),.ready_in(ready), .x_in(shifted_x), .y_out(y));
 
 endmodule
