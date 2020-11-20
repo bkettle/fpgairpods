@@ -81,19 +81,19 @@ module top_level(
                       .rst_in(btnd),
                       .ready_in(sample_pulse),
                       .done_out(lowpass_done),
-                      .signal_in(test_sample_right),
+                      .signal_in(1780+test_sample_right),
                       .signal_out(lowpass_out));
     
     //initialize sample buffer instance
     sampler sampler_buffer(.clk_in(clk_100mhz),
                            .rst_in(btnd),
                            .ready_in(lowpass_done),
-                           .signal_in(1775+lowpass_out),
+                           .signal_in(lowpass_out),
                            .sample_out(sample),
                            .offset(offset));
     
     //initialize error calculator instance
-    error_calculator find_error(.feedback_in(1775+lowpass_out+speaker_out),//[25:10]),
+    error_calculator find_error(.feedback_in(lowpass_out+speaker_out),//[25:10]),
                                 .error_out(error),
                                 .nc_on(sw[0]),
                                 .clk_in(clk_100mhz));
