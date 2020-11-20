@@ -21,10 +21,10 @@ module top_level( input clk_100mhz,
 //    output logic signed [15:0] y_out
     );
     
-    logic signed [15:0] sample [63:0]; //buffer to hold samples
-    logic [5:0] offset; //stores offset for reading from sample buffer
+    logic signed [15:0] sample [255:0]; //buffer to hold samples
+    logic [7:0] offset; //stores offset for reading from sample buffer
     logic signed [15:0] error; //stores most recent error calculated
-    logic signed [9:0] coeffs [63:0]; //holds filter coefficients
+    logic signed [9:0] coeffs [255:0]; //holds filter coefficients
     logic lms_done; //signals whether LMS is done updating weights
     
     //I2S INSTANTIATION (SETUP MICS AND SPEAKER)
@@ -63,8 +63,9 @@ module top_level( input clk_100mhz,
 	logic pwm_val; //pwm signal (HI/LO)
 	
 	always_comb begin
-	   speaker_mid = sw[0]?(speaker_out <<< 6): 0;
-	   speaker_out_switched = speaker_mid[15:8];
+	   //speaker_mid = sw[0]?(speaker_out <<< 6): 0;
+	   speaker_out_switched = 0;
+	   //speaker_out_switched = speaker_out[15:8];
 	end
 	
 	volume_control vc (.vol_in(sw[15:13]),
@@ -72,17 +73,26 @@ module top_level( input clk_100mhz,
     pwm (.clk_in(clk_100mhz), .rst_in(btnd), .level_in({~vol_out[7],vol_out[6:0]}), .pwm_out(pwm_val));
     assign aud_pwm = pwm_val?1'bZ:1'b0;
     
+    logic lowpass_done; //pulse when lowpass is done computing
+    logic signed [15:0] lowpass_out; //output of lowpass filter
+    //initialize lowpass instance
+    lowpass lp_filter(.clk_in(clk_100mhz),
+                      .rst_in(btnd),
+                      .ready_in(sample_pulse),
+                      .done_out(lowpass_done),
+                      .signal_in(1780+test_sample_right),
+                      .signal_out(lowpass_out));
+    
     //initialize sample buffer instance
     sampler sampler_buffer(.clk_in(clk_100mhz),
                            .rst_in(btnd),
-                           .ready_in(sample_pulse),
-                           .signal_in(test_sample_right),
+                           .ready_in(lowpass_done),
+                           .signal_in(lowpass_out),
                            .sample_out(sample),
                            .offset(offset));
     
     //initialize error calculator instance
-		logic [15:0] test_error; assign test_error = speaker_out + test_sample_right;
-    error_calculator find_error(.feedback_in(test_error),//[25:10]),
+    error_calculator find_error(.feedback_in(lowpass_out+speaker_out),//[25:10]),
                                 .error_out(error),
                                 .nc_on(sw[0]),
                                 .clk_in(clk_100mhz));
@@ -90,7 +100,7 @@ module top_level( input clk_100mhz,
     //initialize LMS instance
     LMS lms1(.clk_in(clk_100mhz), 
              .rst_in(btnd),
-             .ready_in(sample_pulse),
+             .ready_in(lowpass_done),
              .error_in(error),
              .sample_in(sample),
              .offset_in(offset),
@@ -109,11 +119,12 @@ module top_level( input clk_100mhz,
   // ILA TO CHECK I2S
 	ila_0 top_ila (
 		.clk(clk_100mhz),
-		.probe0(test_sample_left),
+		.probe0(error),
 		.probe1(test_sample_right),
 		.probe2(speaker_out),
 		.probe3(sample_pulse),
-		.probe4(speaker_out_switched)
+		.probe4(speaker_out),
+		.probe5(lowpass_out)
 	);
     
 endmodule

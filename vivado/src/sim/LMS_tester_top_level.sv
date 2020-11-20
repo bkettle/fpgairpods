@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
-module lms_test_top_level(
-		input logic clk_in,
+module lms_tester_top_level(
+    input logic clk_in,
     input logic rst_in,
     input logic ready_in,
     input logic signed [15:0] x_in,
@@ -40,23 +40,34 @@ module lms_test_top_level(
 			.done_out(lowpass_finished)
 		);
     
+    logic lowpass_done;
+    logic [15:0] lowpass_out;
+    //initialize lowpass instance
+    lowpass lp_filter(.clk_in(clk_in),
+                      .rst_in(rst_in),
+                      .ready_in(ready_in),
+                      .done_out(lowpass_done),
+                      .signal_in(1775+x_in),
+                      .signal_out(lowpass_out));
+    
     //initialize sample buffer instance
     sampler sampler_buffer(.clk_in(clk_in),
                            .rst_in(rst_in),
-                           .ready_in(lowpass_finished),
-                           .signal_in(x_in),
+                           .ready_in(lowpass_done),
+                           .signal_in(lowpass_out),
                            .sample_out(sample),
                            .offset(offset));
     
     //initialize error calculator instance
-    error_calculator find_error(.feedback_in(filtered_x+y_out),//[25:10]),
+    error_calculator find_error(.feedback_in(lowpass_out+y_out),//[25:10]),
                                 .error_out(error),
-                                .clk_in(clk_in), .nc_on(1));
+                                .nc_on(1),
+                                .clk_in(clk_in));
     
     //initialize LMS instance
     LMS lms1(.clk_in(clk_in), 
              .rst_in(rst_in),
-             .ready_in(ready_in),
+             .ready_in(lowpass_done),
              .error_in(error),
              .sample_in(sample),
              .offset_in(offset),
