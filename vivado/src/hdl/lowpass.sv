@@ -17,6 +17,9 @@ module lowpass(
 	logic signed [25:0] accumulator; // store running sum, size from given y_out size
 
 	logic working; // 1 while the system is doing the sum, 0 while idle 
+	
+	logic signed [15:0] accumulator_top;
+	assign accumulator_top = accumulator[25:10];
 
 	always_ff @(posedge clk_in) begin
 		if (rst_in) begin
@@ -55,7 +58,9 @@ module lowpass(
 		end else begin
 			// not working, so the value in accumulator should be the last
 			// result
-			signal_out <= accumulator[25:10];
+			if ((accumulator_top > -100) && (accumulator_top < 100)) begin
+			    signal_out <= accumulator[25:10];
+			end
 			done_out <= 0;
 		end
 	end

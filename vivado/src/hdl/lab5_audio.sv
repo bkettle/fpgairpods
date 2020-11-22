@@ -35,8 +35,8 @@ module top_level(
 	logic i2s_data_in; assign i2s_data_in = ja2;
 	logic i2s_bclk_out; assign ja3 = i2s_bclk_out;
 
-	logic [15:0] test_sample_left;
-	logic [15:0] test_sample_right;
+	logic [15:0] feedback_sample;
+	logic [15:0] ambient_sample;
 	assign led[0] = i2s_data_in;
 	assign led[1] = i2s_bclk_out;
 	assign led[2] = i2s_lrclk_out;
@@ -55,8 +55,8 @@ module top_level(
 	//
 	
 
-	logic [15:0] test_sample_left;
-	logic [15:0] test_sample_right;
+	logic [15:0] feedback_sample;
+	logic [15:0] ambient_sample;
 	logic sample_pulse;
 	i2s_receiver i2s_receiver(
 		.clock_in(clk_100mhz),// 100mhz clock in
@@ -68,8 +68,8 @@ module top_level(
 		.i2s_lrclk_out(i2s_lrclk_out), // select the left or right channel
 		// datasheet tells us the above must be BCLK/64
 
-		.left_sample_out(test_sample_left), // the left channel's sample
-		.right_sample_out(test_sample_right), // the right channel's sample
+		.left_sample_out(feedback_sample), // the left channel's sample
+		.right_sample_out(ambient_sample), // the right channel's sample
 		.new_sample_out(sample_pulse) // a pulse 1 cycle long when new samples are out
 	);
 	
@@ -80,7 +80,7 @@ module top_level(
 		.ready_in(sample_pulse),
     .filter_in(sw[0]),
 		.echo_in(sw[1]),
-		.mic_in(test_sample_left[11:4]),
+		.mic_in(feedback_sample[11:4]),
     .data_out(recorder_data), 
 		.recording_led_out(led[15]),
 		.playback_led_out(led[14]), 
