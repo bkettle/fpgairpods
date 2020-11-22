@@ -58,16 +58,19 @@ module top_level(
 	);
 	
 	logic signed [15:0] speaker_out;
-	logic signed [15:0] speaker_mid;
+	logic signed [16:0] speaker_mid;
 	logic signed [7:0] speaker_out_switched;
 	logic [7:0] vol_out;
 	assign aud_sd = 1;
 	logic pwm_val; //pwm signal (HI/LO)
 	
 	always_comb begin
-	   //speaker_mid = sw[0]?(speaker_out <<< 6): 0;
+	   //speaker_mid = sw[0]?(speaker_out <<< sw[4:1]): 0;
 	   //speaker_out_switched = 0;
-	   speaker_out_switched = sw[0]?speaker_out[15:8]: 0;
+	   speaker_mid = sw[1]? speaker_out: sw[2]? speaker_out <<< 1: sw[3]? speaker_out <<< 2: sw[4] ? speaker_out <<< 3: 
+           sw[5]? speaker_out <<< 4: sw[6]? speaker_out <<< 5: sw[7]? speaker_out <<< 6 :sw[8]? speaker_out <<< 7: speaker_out <<< 8;
+	   
+	   speaker_out_switched = sw[0]? speaker_mid[15:8]: 0;
 	end
 	
 	volume_control vc (.vol_in(sw[15:13]),
@@ -138,7 +141,9 @@ module top_level(
 		.probe2(speaker_out_switched),
 		.probe3(sample_pulse),
 		.probe4(speaker_out),
-		.probe5(lowpass_out)
+		.probe5(lp_feedback_out),
+		.probe6(lp_ambient_out),
+		.probe7(feedback_sample)
 	);
     
 endmodule
