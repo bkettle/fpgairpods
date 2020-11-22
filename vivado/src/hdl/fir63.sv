@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module fir63(
-  input  clk_in,rst_in,ready_in,
+  input clk_in,rst_in,ready_in,
   input signed [15:0] sample [63:0],
   input [5:0] offset,
   input signed [9:0] weights_in [63:0],
@@ -30,7 +30,7 @@ module fir63(
             if (index < MAX_CLOCK_CYCLES) begin
                 // running sum of coeff * samples[offset-index[
                 accumulator <= accumulator + weights_in[index]*sample[offset-index];
-                index<= index + 1;
+                index <= index + 1;
             end else signal_out <= accumulator[25:10];
        end
     end

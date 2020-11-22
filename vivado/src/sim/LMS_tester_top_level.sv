@@ -11,7 +11,8 @@ module lms_tester_top_level(
 //    logic signed [15:0] real_y_out;
     
 //    assign real_y_out = y_out[25:10];
-    
+//
+
     logic signed [15:0] sample [63:0]; //buffer to hold samples
     logic [5:0] offset; //stores offset for reading from sample buffer
     logic signed [15:0] error; //stores most recent error calculated
@@ -38,11 +39,27 @@ module lms_tester_top_level(
                            .sample_out(sample),
                            .offset(offset));
     
+		logic cup_sim_done;
+		logic signed [15:0] cup_sim_feedback;
+		logic signed [7:0] trimmed_speaker_output;
+		assign trimmed_speaker_output = y_out[8:1];
+		//cup_simulator cup_sim(.clk_in(clk_in),
+		//											.reset_in(rst_in),
+		//											.ready_in(lowpass_done),
+		//											.done_out(cup_sim_done),
+		//											.ambient_sample_in(lowpass_out),
+		//											.speaker_output_in(trimmed_speaker_output),
+		//											.feedback_sample_out(cup_sim_feedback)
+		//											);
+
     //initialize error calculator instance
-    error_calculator find_error(.feedback_in(lowpass_out+y_out),//[25:10]),
+		logic signed [15:0] sim_feedback;
+		assign sim_feedback = lowpass_out + y_out[15:8];
+    error_calculator find_error(.feedback_in(sim_feedback),//[25:10]),
                                 .error_out(error),
                                 .nc_on(1),
-                                .clk_in(clk_in));
+                                .clk_in(clk_in)
+															);
     
     //initialize LMS instance
     NLMS nlms1(.clk_in(clk_in), 

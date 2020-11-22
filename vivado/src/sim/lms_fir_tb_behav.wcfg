@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="lms_fir_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="lms_fir_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1001000001fs"></ZoomEndTime>
+      <Cursor1Time time="936965000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="154"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="5" />
+   <wvobject type="group" fp_name="group81">
+      <obj_property name="label">tb</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/lms_fir_tb/clk">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/reset">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/ready">
+         <obj_property name="ElementShortName">ready</obj_property>
+         <obj_property name="ObjectShortName">ready</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/x">
+         <obj_property name="ElementShortName">x[15:0]</obj_property>
+         <obj_property name="ObjectShortName">x[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/y">
+         <obj_property name="ElementShortName">y[15:0]</obj_property>
+         <obj_property name="ObjectShortName">y[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/scount">
+         <obj_property name="ElementShortName">scount[20:0]</obj_property>
+         <obj_property name="ObjectShortName">scount[20:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/cycle">
+         <obj_property name="ElementShortName">cycle[6:0]</obj_property>
+         <obj_property name="ObjectShortName">cycle[6:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/fin">
+         <obj_property name="ElementShortName">fin[31:0]</obj_property>
+         <obj_property name="ObjectShortName">fin[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/fout">
+         <obj_property name="ElementShortName">fout[31:0]</obj_property>
+         <obj_property name="ObjectShortName">fout[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/code">
+         <obj_property name="ElementShortName">code[31:0]</obj_property>
+         <obj_property name="ObjectShortName">code[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group95">
+      <obj_property name="label">top</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/clk_in">
+         <obj_property name="ElementShortName">clk_in</obj_property>
+         <obj_property name="ObjectShortName">clk_in</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/rst_in">
+         <obj_property name="ElementShortName">rst_in</obj_property>
+         <obj_property name="ObjectShortName">rst_in</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/ready_in">
+         <obj_property name="ElementShortName">ready_in</obj_property>
+         <obj_property name="ObjectShortName">ready_in</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/x_in">
+         <obj_property name="ElementShortName">x_in[15:0]</obj_property>
+         <obj_property name="ObjectShortName">x_in[15:0]</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/lowpass_out">
+         <obj_property name="ElementShortName">lowpass_out[15:0]</obj_property>
+         <obj_property name="ObjectShortName">lowpass_out[15:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/y_out">
+         <obj_property name="ElementShortName">y_out[15:0]</obj_property>
+         <obj_property name="ObjectShortName">y_out[15:0]</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
+         <obj_property name="AnalogYRangeMin">-1200.000000</obj_property>
+         <obj_property name="AnalogYRRangeMax">1200.000000</obj_property>
+         <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
+         <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+         <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/sample">
+         <obj_property name="ElementShortName">sample[63:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">sample[63:0][15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/offset">
+         <obj_property name="ElementShortName">offset[5:0]</obj_property>
+         <obj_property name="ObjectShortName">offset[5:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/error">
+         <obj_property name="ElementShortName">error[15:0]</obj_property>
+         <obj_property name="ObjectShortName">error[15:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/coeffs">
+         <obj_property name="ElementShortName">coeffs[63:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">coeffs[63:0][9:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/lms_done">
+         <obj_property name="ElementShortName">lms_done</obj_property>
+         <obj_property name="ObjectShortName">lms_done</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/norm">
+         <obj_property name="ElementShortName">norm[31:0]</obj_property>
+         <obj_property name="ObjectShortName">norm[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/lowpass_done">
+         <obj_property name="ElementShortName">lowpass_done</obj_property>
+         <obj_property name="ObjectShortName">lowpass_done</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group110">
+      <obj_property name="label">nlms</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/nlms1/clk_in">
+         <obj_property name="ElementShortName">clk_in</obj_property>
+         <obj_property name="ObjectShortName">clk_in</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/nlms1/rst_in">
+         <obj_property name="ElementShortName">rst_in</obj_property>
+         <obj_property name="ObjectShortName">rst_in</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/nlms1/ready_in">
+         <obj_property name="ElementShortName">ready_in</obj_property>
+         <obj_property name="ObjectShortName">ready_in</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/nlms1/error_in">
+         <obj_property name="ElementShortName">error_in[15:0]</obj_property>
+         <obj_property name="ObjectShortName">error_in[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/nlms1/norm_in">
+         <obj_property name="ElementShortName">norm_in[31:0]</obj_property>
+         <obj_property name="ObjectShortName">norm_in[31:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/nlms1/sample_in">
+         <obj_property name="ElementShortName">sample_in[63:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">sample_in[63:0][15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/nlms1/offset_in">
+         <obj_property name="ElementShortName">offset_in[5:0]</obj_property>
+         <obj_property name="ObjectShortName">offset_in[5:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/nlms1/coeffs_out">
+         <obj_property name="ElementShortName">coeffs_out[63:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">coeffs_out[63:0][9:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/nlms1/done">
+         <obj_property name="ElementShortName">done</obj_property>
+         <obj_property name="ObjectShortName">done</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/nlms1/term">
+         <obj_property name="ElementShortName">term[55:0]</obj_property>
+         <obj_property name="ObjectShortName">term[55:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/nlms1/num">
+         <obj_property name="ElementShortName">num[23:0]</obj_property>
+         <obj_property name="ObjectShortName">num[23:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/nlms1/temp_coeffs">
+         <obj_property name="ElementShortName">temp_coeffs[63:0][34:0]</obj_property>
+         <obj_property name="ObjectShortName">temp_coeffs[63:0][34:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/nlms1/valid_out">
+         <obj_property name="ElementShortName">valid_out</obj_property>
+         <obj_property name="ObjectShortName">valid_out</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/nlms1/ARRAY_SIZE">
+         <obj_property name="ElementShortName">ARRAY_SIZE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ARRAY_SIZE[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group184">
+      <obj_property name="label">cup_sim</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group121">
+      <obj_property name="label">fir</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/fir_filter/clk_in">
+         <obj_property name="ElementShortName">clk_in</obj_property>
+         <obj_property name="ObjectShortName">clk_in</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/fir_filter/rst_in">
+         <obj_property name="ElementShortName">rst_in</obj_property>
+         <obj_property name="ObjectShortName">rst_in</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/fir_filter/ready_in">
+         <obj_property name="ElementShortName">ready_in</obj_property>
+         <obj_property name="ObjectShortName">ready_in</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/fir_filter/sample">
+         <obj_property name="ElementShortName">sample[63:0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">sample[63:0][15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/fir_filter/offset">
+         <obj_property name="ElementShortName">offset[5:0]</obj_property>
+         <obj_property name="ObjectShortName">offset[5:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/fir_filter/weights_in">
+         <obj_property name="ElementShortName">weights_in[63:0][9:0]</obj_property>
+         <obj_property name="ObjectShortName">weights_in[63:0][9:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/fir_filter/signal_out">
+         <obj_property name="ElementShortName">signal_out[15:0]</obj_property>
+         <obj_property name="ObjectShortName">signal_out[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/fir_filter/index">
+         <obj_property name="ElementShortName">index[5:0]</obj_property>
+         <obj_property name="ObjectShortName">index[5:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/fir_filter/accumulator">
+         <obj_property name="ElementShortName">accumulator[25:0]</obj_property>
+         <obj_property name="ObjectShortName">accumulator[25:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/fir_filter/MAX_CLOCK_CYCLES">
+         <obj_property name="ElementShortName">MAX_CLOCK_CYCLES[31:0]</obj_property>
+         <obj_property name="ObjectShortName">MAX_CLOCK_CYCLES[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

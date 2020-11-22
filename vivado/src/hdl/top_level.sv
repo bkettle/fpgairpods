@@ -75,7 +75,7 @@ module top_level(
 	
 	volume_control vc (.vol_in(sw[15:13]),
                        .signal_in(speaker_out_switched), .signal_out(vol_out));
-    pwm (.clk_in(clk_100mhz), .rst_in(btnd), .level_in({~vol_out[7],vol_out[6:0]}), .pwm_out(pwm_val));
+    pwm pwm (.clk_in(clk_100mhz), .rst_in(btnd), .level_in({~vol_out[7],vol_out[6:0]}), .pwm_out(pwm_val));
     assign aud_pwm = pwm_val?1'bZ:1'b0;
     
     logic lp_ambient_done; //pulse when lowpass is done computing (ambient)
