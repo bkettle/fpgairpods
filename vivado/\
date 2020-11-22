@@ -11,8 +11,6 @@ module fir63(
 
   logic [5:0] index;
   logic signed [25:0] accumulator;
-
-	logic done_triggered; // 1 after done_out is triggered
   
   // parameters used in ff
   parameter MAX_CLOCK_CYCLES = 63;
@@ -29,20 +27,16 @@ module fir63(
             // reset index and accumulator  
             index <= 0;
             accumulator <= 0;
-						done_triggered <= 0;
-						done_out <= 0;
         end else begin
-					if (index < MAX_CLOCK_CYCLES) begin
-							// running sum of coeff * samples[offset-index[
-							accumulator <= accumulator + weights_in[index]*sample[offset-index];
-							index <= index + 1;
-							done_out <= 0;
-					end else begin 
-						signal_out <= accumulator[25:10];
-						// make done_out a pulse
-						done_out <= ~done_triggered;
-						done_triggered <= 1;
-					end
+            if (index < MAX_CLOCK_CYCLES) begin
+                // running sum of coeff * samples[offset-index[
+                accumulator <= accumulator + weights_in[index]*sample[offset-index];
+                index <= index + 1;
+								done_out <= 0;
+							end else if (index == MAX_CLOCK_CYCLES) begin 
+								signal_out <= accumulator[25:10];
+								done_out <= 1;
+							end
        end
     end
   end

@@ -43,15 +43,15 @@ module i2s_receiver(
 
 	always_ff @(posedge clock_in) begin
 		if (reset_in) begin
-			clk_counter = 0;
-			bit_counter = 0;
-			i2s_lrclk_out = 0;
-			i2s_bclk_out = 0;
-			curr_left_sample = 0;
-			curr_right_sample = 0;
-			left_sample_out = 0;
-			right_sample_out = 0;
-			new_sample_out = 0;
+			clk_counter <= 0;
+			bit_counter <= 0;
+			i2s_lrclk_out <= 0;
+			i2s_bclk_out <= 0;
+			curr_left_sample <= 0;
+			curr_right_sample <= 0;
+			left_sample_out <= 0;
+			right_sample_out <= 0;
+			new_sample_out <= 0;
 		end
 
 		if (clk_counter == CLOCK_DIVISOR - 1) begin

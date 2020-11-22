@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1001000001fs"></ZoomEndTime>
-      <Cursor1Time time="936965000fs"></Cursor1Time>
+      <ZoomStartTime time="33525000fs"></ZoomStartTime>
+      <ZoomEndTime time="62865001fs"></ZoomEndTime>
+      <Cursor1Time time="38405000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="154"></NameColumnWidth>
-      <ValueColumnWidth column_width="58"></ValueColumnWidth>
+      <NameColumnWidth column_width="153"></NameColumnWidth>
+      <ValueColumnWidth column_width="55"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="5" />
    <wvobject type="group" fp_name="group81">
@@ -236,6 +236,10 @@
          <obj_property name="ElementShortName">signal_out[15:0]</obj_property>
          <obj_property name="ObjectShortName">signal_out[15:0]</obj_property>
       </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/fir_filter/done_out">
+         <obj_property name="ElementShortName">done_out</obj_property>
+         <obj_property name="ObjectShortName">done_out</obj_property>
+      </wvobject>
       <wvobject type="array" fp_name="/lms_fir_tb/dut/fir_filter/index">
          <obj_property name="ElementShortName">index[5:0]</obj_property>
          <obj_property name="ObjectShortName">index[5:0]</obj_property>
@@ -243,6 +247,10 @@
       <wvobject type="array" fp_name="/lms_fir_tb/dut/fir_filter/accumulator">
          <obj_property name="ElementShortName">accumulator[25:0]</obj_property>
          <obj_property name="ObjectShortName">accumulator[25:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/fir_filter/done_triggered">
+         <obj_property name="ElementShortName">done_triggered</obj_property>
+         <obj_property name="ObjectShortName">done_triggered</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/lms_fir_tb/dut/fir_filter/MAX_CLOCK_CYCLES">
          <obj_property name="ElementShortName">MAX_CLOCK_CYCLES[31:0]</obj_property>

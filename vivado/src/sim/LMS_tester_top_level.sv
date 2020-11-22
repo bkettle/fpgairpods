@@ -54,7 +54,7 @@ module lms_tester_top_level(
 
     //initialize error calculator instance
 		logic signed [15:0] sim_feedback;
-		assign sim_feedback = lowpass_out + y_out[15:8];
+		assign sim_feedback = lowpass_out + y_out;
     error_calculator find_error(.feedback_in(sim_feedback),//[25:10]),
                                 .error_out(error),
                                 .nc_on(1),
@@ -73,12 +73,15 @@ module lms_tester_top_level(
              .done(lms_done));
     
     //initialize FIR Filter instance
+		logic fir_done;
     fir63 fir_filter(.clk_in(clk_in),
                      .rst_in(rst_in),
                      .ready_in(lms_done),
                      .sample(sample),
                      .offset(offset),
                      .weights_in(coeffs),
-                     .signal_out(y_out));
+                     .signal_out(y_out),
+										 .done_out(fir_done)
+		);
     
 endmodule

@@ -77,9 +77,10 @@ endmodule
 ///////////////////////////////////////////////////////////////////////////////
 
 module coeffs31(
-  input  [4:0] index_in,
-  output logic signed [9:0] coeff_out
-);
+		input  [4:0] index_in,
+		output logic signed [9:0] coeff_out
+	);
+
   logic signed [9:0] coeff;
   assign coeff_out = coeff;
   // tools will turn this into a 31x10 ROM
