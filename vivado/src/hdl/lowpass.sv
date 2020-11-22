@@ -58,7 +58,7 @@ module lowpass(
 		end else begin
 			// not working, so the value in accumulator should be the last
 			// result
-			if ((accumulator_top > -100) && (accumulator_top < 100)) begin
+			if ((accumulator_top > -250) && (accumulator_top < 250)) begin
 			    signal_out <= accumulator[25:10];
 			end
 			done_out <= 0;
