@@ -17,7 +17,7 @@ module lms_fir_tb();
     //CHANGE THESE TO ACTUAL FILE NAMES!YOU MUST DO THIS
     //fin = $fopen("sine2_10bits.waveform","r");
     //fin = $fopen("sine_148_7bits.waveform","r");
-    fin = $fopen("ila_test_input.waveform","r");
+    fin = $fopen("ila_test_input_nlms_2.waveform","r");
     fout = $fopen("fir31.output","w");
     if (fin == 0 || fout == 0) begin
       $display("can't open file...");

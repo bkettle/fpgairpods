@@ -70,7 +70,7 @@ module top_level(
 	   speaker_mid = sw[1]? speaker_out: sw[2]? speaker_out <<< 1: sw[3]? speaker_out <<< 2: sw[4] ? speaker_out <<< 3: 
            sw[5]? speaker_out <<< 4: sw[6]? speaker_out <<< 5: sw[7]? speaker_out <<< 6 :sw[8]? speaker_out <<< 7: speaker_out <<< 8;
 	   
-	   speaker_out_switched = sw[0]? speaker_mid[15:8]: 0;
+	   speaker_out_switched = sw[10]? speaker_mid[15:8]: 0;
 	end
 	
 	volume_control vc (.vol_in(sw[15:13]),
@@ -108,7 +108,7 @@ module top_level(
                            .offset(offset));
     
     //initialize error calculator instance
-    error_calculator find_error(.feedback_in(lp_feedback_out),//[25:10]),
+    error_calculator find_error(.feedback_in(lp_ambient_out+speaker_out),//[25:10]),
                                 .error_out(error),
                                 .nc_on(sw[0]),
                                 .clk_in(clk_100mhz));
