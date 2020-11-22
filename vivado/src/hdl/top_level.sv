@@ -112,7 +112,8 @@ module top_level(
                            .signal_in(lp_ambient_out),
                            .sample_out(sample),
                            .norm_out(norm),
-                           .offset(offset));
+                           .offset(offset)
+												);
     
     //initialize error calculator instance
     error_calculator find_error(.feedback_in(lp_ambient_out+speaker_out),//[25:10]),
