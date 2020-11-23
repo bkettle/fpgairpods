@@ -91,7 +91,7 @@ module top_level(
 			.rst_in(btnd),
 			.ready_in(sample_pulse),
 			.done_out(lp_ambient_done),
-			.signal_in(1780+ambient_sample),
+			.signal_in(16'd1780+ambient_sample),
 			.signal_out(lp_ambient_out)
 		);
     

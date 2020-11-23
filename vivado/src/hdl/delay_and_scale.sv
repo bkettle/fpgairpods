@@ -7,18 +7,22 @@ module delay_and_scale(
 		output logic done_out,
 		input [7:0] delay_in,
 		input [4:0] scale_in, // numerator of a fraction over 2^6
-		input [15:0] signal_in,
-		output logic [15:0] signal_out
+		input signed [15:0] signal_in,
+		output logic signed [15:0] signal_out
   );
 
 	logic signed [15:0] history [255:0];
 	logic [7:0] hist_offset;
+	logic [7:0] curr_index;
 
+	logic signed [5:0] scale_factor;
+	assign scale_factor = {1'b0, scale_in}; // make into a signed number
 	logic signed [20:0] unscaled_next_output; // 5 fractional bits
 	logic signed [20:0] scaled_next_output; // 5 fractional bits
 	always_comb begin
-		unscaled_next_output = history[hist_offset - delay_in]; 
-		scaled_next_output = unscaled_next_output * scale_in;
+		curr_index = hist_offset - delay_in - 1;
+		unscaled_next_output = history[curr_index];
+		scaled_next_output = unscaled_next_output * scale_factor;
 	end
 
 	always_ff @(posedge clk_in) begin
