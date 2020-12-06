@@ -11,7 +11,7 @@ module cup_simulator(
   );
 
 	parameter SAMPLE_DELAY = 8'd64;
-	parameter SAMPLE_SCALE_FACTOR = 5'd16; // out of 32 
+	parameter SAMPLE_SCALE_FACTOR = 8'd128; // out of 256 
 
 	logic signed [15:0] filtered_ambient; 
 
