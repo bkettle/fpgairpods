@@ -29,7 +29,7 @@ module delay_and_scale(
 		if (reset_in) begin
 			hist_offset <= 0;
 			signal_out <= 1;
-			for (int i=0; i<64; i++)
+			for (int i=0; i<256; i++)
 				history[i] <= 0; // clear all values
 		end else if (ready_in) begin
 			history[hist_offset] <= signal_in;

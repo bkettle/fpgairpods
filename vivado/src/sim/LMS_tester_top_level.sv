@@ -21,7 +21,7 @@ module lms_tester_top_level(
     logic signed [31:0] norm;
     
     logic lowpass_done;
-    logic [15:0] lowpass_out;
+    logic signed [15:0] lowpass_out;
     //initialize lowpass instance
     lowpass lp_filter(.clk_in(clk_in),
                       .rst_in(rst_in),
@@ -32,31 +32,32 @@ module lms_tester_top_level(
     
     //initialize sample buffer instance
     sampler sampler_buffer(.clk_in(clk_in),
-                           .rst_in(rst_in),
-                           .norm_out(norm),
-                           .ready_in(lowpass_done),
-                           .signal_in(lowpass_out),
+                           .rst_in(rst_in), .norm_out(norm), .ready_in(lowpass_done), .signal_in(lowpass_out),
                            .sample_out(sample),
                            .offset(offset));
     
 		logic cup_sim_done;
 		logic signed [15:0] cup_sim_feedback;
-		logic signed [7:0] trimmed_speaker_output;
-		assign trimmed_speaker_output = y_out[8:1];
-		//cup_simulator cup_sim(.clk_in(clk_in),
-		//											.reset_in(rst_in),
-		//											.ready_in(lowpass_done),
-		//											.done_out(cup_sim_done),
-		//											.ambient_sample_in(lowpass_out),
-		//											.speaker_output_in(trimmed_speaker_output),
-		//											.feedback_sample_out(cup_sim_feedback)
-		//											);
+		cup_simulator cup_sim(.clk_in(clk_in),
+													.reset_in(rst_in),
+													.ready_in(lowpass_done),
+													.done_out(cup_sim_done),
+													.ambient_sample_in(lowpass_out),
+													.speaker_output_in(y_out),
+													.feedback_sample_out(cup_sim_feedback)
+													);
 
     //initialize error calculator instance
+<<<<<<< HEAD
     logic signed [15:0] sim_feedback;
     assign sim_feedback = lowpass_out + y_out;
     logic error_done;
     error_calculator find_error(.feedback_in(sim_feedback),//[25:10]),
+=======
+		logic signed [15:0] sim_feedback;
+		assign sim_feedback = lowpass_out + y_out;
+    error_calculator find_error(.feedback_in(cup_sim_feedback),//[25:10]),
+>>>>>>> 8680b6408a9c41f5c8070220dc7b8fde8870af02
                                 .error_out(error),
                                 .nc_on(1),
                                 .error_ready(lowpass_done),
@@ -68,7 +69,11 @@ module lms_tester_top_level(
     //initialize LMS instance
     NLMS nlms1(.clk_in(clk_in), 
              .rst_in(rst_in),
+<<<<<<< HEAD
              .ready_in(error_done),
+=======
+             .ready_in(cup_sim_done),
+>>>>>>> 8680b6408a9c41f5c8070220dc7b8fde8870af02
              .error_in(error),
              .norm_in(norm),
              .sample_in(sample),

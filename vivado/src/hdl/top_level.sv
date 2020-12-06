@@ -60,7 +60,7 @@ module top_level(
 		logic pwm_val; //pwm signal (HI/LO)
 		
 		always_comb begin
-			 speaker_out_switched = sw[1] ? speaker_delayed[8:1] : 0;
+			 speaker_out_switched = sw[1] ? speaker_delayed[8:1]: sw[2] ? speaker_delayed[7:0]: 0;
 		end
 
 		logic delay_done;
@@ -70,7 +70,7 @@ module top_level(
 			.reset_in(btnd),
 			.ready_in(delay_start),
 			.done_out(delay_done),
-			.delay_in(sw[9:2]), // allow dynamically setting the delay by using switches 9-2
+			.delay_in(8'd16), // allow dynamically setting the delay by using switches 9-2
 			.scale_in(sw[15:11]), // set scale using top 5 switches
 			.signal_in(speaker_out),
 			.signal_out(speaker_delayed)
@@ -117,7 +117,7 @@ module top_level(
 												);
     
     //initialize error calculator instance
-    error_calculator find_error(.feedback_in(lp_ambient_out+speaker_out),//[25:10]),
+    error_calculator find_error(.feedback_in(lp_feedback_out),//[25:10]),
                                 .error_out(error),
                                 .nc_on(sw[0]),
                                 .clk_in(clk_100mhz)
@@ -154,7 +154,8 @@ module top_level(
 			.probe4(speaker_out),
 			.probe5(lp_feedback_out),
 			.probe6(lp_ambient_out),
-			.probe7(feedback_sample)
+			.probe7(feedback_sample),
+			.probe8(speaker_delayed)
 		);
     
 endmodule
