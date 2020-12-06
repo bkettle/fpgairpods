@@ -11,12 +11,12 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="33525000fs"></ZoomStartTime>
-      <ZoomEndTime time="62865001fs"></ZoomEndTime>
-      <Cursor1Time time="38405000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="2001000001fs"></ZoomEndTime>
+      <Cursor1Time time="1943035000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="153"></NameColumnWidth>
+      <NameColumnWidth column_width="141"></NameColumnWidth>
       <ValueColumnWidth column_width="55"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="5" />
@@ -86,13 +86,12 @@
          <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
          <obj_property name="CellHeight">100</obj_property>
          <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject type="array" fp_name="/lms_fir_tb/dut/lowpass_out">
-         <obj_property name="ElementShortName">lowpass_out[15:0]</obj_property>
-         <obj_property name="ObjectShortName">lowpass_out[15:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
-         <obj_property name="CellHeight">100</obj_property>
+         <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
+         <obj_property name="AnalogYRangeMin">-150.000000</obj_property>
+         <obj_property name="AnalogYRRangeMax">150.000000</obj_property>
+         <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
+         <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+         <obj_property name="AnalogHorizLine">0.000000</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/lms_fir_tb/dut/y_out">
          <obj_property name="ElementShortName">y_out[15:0]</obj_property>
@@ -101,8 +100,8 @@
          <obj_property name="CellHeight">100</obj_property>
          <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
          <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
-         <obj_property name="AnalogYRangeMin">-1200.000000</obj_property>
-         <obj_property name="AnalogYRRangeMax">1200.000000</obj_property>
+         <obj_property name="AnalogYRangeMin">-150.000000</obj_property>
+         <obj_property name="AnalogYRRangeMax">150.000000</obj_property>
          <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
          <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
          <obj_property name="AnalogHorizLine">0.000000</obj_property>
@@ -118,9 +117,15 @@
       <wvobject type="array" fp_name="/lms_fir_tb/dut/error">
          <obj_property name="ElementShortName">error[15:0]</obj_property>
          <obj_property name="ObjectShortName">error[15:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
          <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
          <obj_property name="CellHeight">100</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
+         <obj_property name="AnalogYRangeMin">-150.000000</obj_property>
+         <obj_property name="AnalogYRRangeMax">150.000000</obj_property>
+         <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
+         <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+         <obj_property name="AnalogHorizLine">0.000000</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/lms_fir_tb/dut/coeffs">
          <obj_property name="ElementShortName">coeffs[63:0][9:0]</obj_property>
@@ -137,6 +142,35 @@
       <wvobject type="logic" fp_name="/lms_fir_tb/dut/lowpass_done">
          <obj_property name="ElementShortName">lowpass_done</obj_property>
          <obj_property name="ObjectShortName">lowpass_done</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/lowpass_out">
+         <obj_property name="ElementShortName">lowpass_out[15:0]</obj_property>
+         <obj_property name="ObjectShortName">lowpass_out[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/cup_sim_done">
+         <obj_property name="ElementShortName">cup_sim_done</obj_property>
+         <obj_property name="ObjectShortName">cup_sim_done</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/cup_sim_feedback">
+         <obj_property name="ElementShortName">cup_sim_feedback[15:0]</obj_property>
+         <obj_property name="ObjectShortName">cup_sim_feedback[15:0]</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
+         <obj_property name="AnalogYRangeMin">-150.000000</obj_property>
+         <obj_property name="AnalogYRRangeMax">150.000000</obj_property>
+         <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
+         <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+         <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/sim_feedback">
+         <obj_property name="ElementShortName">sim_feedback[15:0]</obj_property>
+         <obj_property name="ObjectShortName">sim_feedback[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/fir_done">
+         <obj_property name="ElementShortName">fir_done</obj_property>
+         <obj_property name="ObjectShortName">fir_done</obj_property>
       </wvobject>
    </wvobject>
    <wvobject type="group" fp_name="group110">
@@ -203,11 +237,123 @@
       <obj_property name="label">cup_sim</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="isExpanded"></obj_property>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/cup_sim/clk_in">
+         <obj_property name="ElementShortName">clk_in</obj_property>
+         <obj_property name="ObjectShortName">clk_in</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/cup_sim/reset_in">
+         <obj_property name="ElementShortName">reset_in</obj_property>
+         <obj_property name="ObjectShortName">reset_in</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/cup_sim/ready_in">
+         <obj_property name="ElementShortName">ready_in</obj_property>
+         <obj_property name="ObjectShortName">ready_in</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/lms_fir_tb/dut/cup_sim/done_out">
+         <obj_property name="ElementShortName">done_out</obj_property>
+         <obj_property name="ObjectShortName">done_out</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/cup_sim/ambient_sample_in">
+         <obj_property name="ElementShortName">ambient_sample_in[15:0]</obj_property>
+         <obj_property name="ObjectShortName">ambient_sample_in[15:0]</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="AnalogYRangeType">ANALOG_YRANGETYPE_FIXED</obj_property>
+         <obj_property name="AnalogYRangeMin">-200.000000</obj_property>
+         <obj_property name="AnalogYRRangeMax">200.000000</obj_property>
+         <obj_property name="AnalogInterpolation">ANALOG_INTERPOLATION_LINEAR</obj_property>
+         <obj_property name="AnalogOffscale">ANALOG_OFFSCALE_HIDE</obj_property>
+         <obj_property name="AnalogHorizLine">0.000000</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/cup_sim/speaker_output_in">
+         <obj_property name="ElementShortName">speaker_output_in[15:0]</obj_property>
+         <obj_property name="ObjectShortName">speaker_output_in[15:0]</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ANALOG</obj_property>
+         <obj_property name="CellHeight">100</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/cup_sim/feedback_sample_out">
+         <obj_property name="ElementShortName">feedback_sample_out[15:0]</obj_property>
+         <obj_property name="ObjectShortName">feedback_sample_out[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/cup_sim/filtered_ambient">
+         <obj_property name="ElementShortName">filtered_ambient[15:0]</obj_property>
+         <obj_property name="ObjectShortName">filtered_ambient[15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/cup_sim/SAMPLE_DELAY">
+         <obj_property name="ElementShortName">SAMPLE_DELAY[7:0]</obj_property>
+         <obj_property name="ObjectShortName">SAMPLE_DELAY[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/lms_fir_tb/dut/cup_sim/SAMPLE_SCALE_FACTOR">
+         <obj_property name="ElementShortName">SAMPLE_SCALE_FACTOR[4:0]</obj_property>
+         <obj_property name="ObjectShortName">SAMPLE_SCALE_FACTOR[4:0]</obj_property>
+      </wvobject>
+      <wvobject type="group" fp_name="group1597">
+         <obj_property name="label">delay</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
+         <wvobject type="logic" fp_name="/lms_fir_tb/dut/cup_sim/delay_scale/clk_in">
+            <obj_property name="ElementShortName">clk_in</obj_property>
+            <obj_property name="ObjectShortName">clk_in</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/lms_fir_tb/dut/cup_sim/delay_scale/reset_in">
+            <obj_property name="ElementShortName">reset_in</obj_property>
+            <obj_property name="ObjectShortName">reset_in</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/lms_fir_tb/dut/cup_sim/delay_scale/ready_in">
+            <obj_property name="ElementShortName">ready_in</obj_property>
+            <obj_property name="ObjectShortName">ready_in</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/lms_fir_tb/dut/cup_sim/delay_scale/done_out">
+            <obj_property name="ElementShortName">done_out</obj_property>
+            <obj_property name="ObjectShortName">done_out</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/lms_fir_tb/dut/cup_sim/delay_scale/delay_in">
+            <obj_property name="ElementShortName">delay_in[7:0]</obj_property>
+            <obj_property name="ObjectShortName">delay_in[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/lms_fir_tb/dut/cup_sim/delay_scale/scale_in">
+            <obj_property name="ElementShortName">scale_in[4:0]</obj_property>
+            <obj_property name="ObjectShortName">scale_in[4:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/lms_fir_tb/dut/cup_sim/delay_scale/signal_in">
+            <obj_property name="ElementShortName">signal_in[15:0]</obj_property>
+            <obj_property name="ObjectShortName">signal_in[15:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/lms_fir_tb/dut/cup_sim/delay_scale/signal_out">
+            <obj_property name="ElementShortName">signal_out[15:0]</obj_property>
+            <obj_property name="ObjectShortName">signal_out[15:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/lms_fir_tb/dut/cup_sim/delay_scale/history">
+            <obj_property name="ElementShortName">history[255:0][15:0]</obj_property>
+            <obj_property name="ObjectShortName">history[255:0][15:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/lms_fir_tb/dut/cup_sim/delay_scale/hist_offset">
+            <obj_property name="ElementShortName">hist_offset[7:0]</obj_property>
+            <obj_property name="ObjectShortName">hist_offset[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/lms_fir_tb/dut/cup_sim/delay_scale/curr_index">
+            <obj_property name="ElementShortName">curr_index[7:0]</obj_property>
+            <obj_property name="ObjectShortName">curr_index[7:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/lms_fir_tb/dut/cup_sim/delay_scale/scale_factor">
+            <obj_property name="ElementShortName">scale_factor[5:0]</obj_property>
+            <obj_property name="ObjectShortName">scale_factor[5:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/lms_fir_tb/dut/cup_sim/delay_scale/unscaled_next_output">
+            <obj_property name="ElementShortName">unscaled_next_output[20:0]</obj_property>
+            <obj_property name="ObjectShortName">unscaled_next_output[20:0]</obj_property>
+         </wvobject>
+         <wvobject type="array" fp_name="/lms_fir_tb/dut/cup_sim/delay_scale/scaled_next_output">
+            <obj_property name="ElementShortName">scaled_next_output[20:0]</obj_property>
+            <obj_property name="ObjectShortName">scaled_next_output[20:0]</obj_property>
+         </wvobject>
+      </wvobject>
    </wvobject>
    <wvobject type="group" fp_name="group121">
       <obj_property name="label">fir</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject type="logic" fp_name="/lms_fir_tb/dut/fir_filter/clk_in">
          <obj_property name="ElementShortName">clk_in</obj_property>
          <obj_property name="ObjectShortName">clk_in</obj_property>
