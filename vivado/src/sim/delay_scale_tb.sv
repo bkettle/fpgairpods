@@ -68,8 +68,8 @@ module delay_scale_tb();
 		.reset_in(reset),
 		.ready_in(ready),
 		.done_out(delay_done),
-		.delay_in(8'd50),
-		.scale_in(5'b10000),
+		.delay_in(8'd10),
+		.scale_in(5'b11000),
 		.signal_in(x),
 		.signal_out(y)
 	);
