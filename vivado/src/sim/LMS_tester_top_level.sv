@@ -53,18 +53,22 @@ module lms_tester_top_level(
 		//											);
 
     //initialize error calculator instance
-		logic signed [15:0] sim_feedback;
-		assign sim_feedback = lowpass_out + y_out;
+    logic signed [15:0] sim_feedback;
+    assign sim_feedback = lowpass_out + y_out;
+    logic error_done;
     error_calculator find_error(.feedback_in(sim_feedback),//[25:10]),
                                 .error_out(error),
                                 .nc_on(1),
-                                .clk_in(clk_in)
+                                .error_ready(lowpass_done),
+                                .rst_in(rst_in),
+                                .clk_in(clk_in),
+                                .done_out(error_done)
 															);
     
     //initialize LMS instance
     NLMS nlms1(.clk_in(clk_in), 
              .rst_in(rst_in),
-             .ready_in(lowpass_done),
+             .ready_in(error_done),
              .error_in(error),
              .norm_in(norm),
              .sample_in(sample),
