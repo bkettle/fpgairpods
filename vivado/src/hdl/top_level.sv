@@ -64,10 +64,11 @@ module top_level(
 		end
 
 		logic delay_done;
+		logic delay_start;
 		delay_and_scale delay_and_scale(
 			.clk_in(clk_100mhz),
 			.reset_in(btnd),
-			.ready_in(1'b1),
+			.ready_in(delay_start),
 			.done_out(delay_done),
 			.delay_in(sw[9:2]), // allow dynamically setting the delay by using switches 9-2
 			.scale_in(sw[15:11]), // set scale using top 5 switches
@@ -140,7 +141,8 @@ module top_level(
                      .sample(sample),
                      .offset(offset),
                      .weights_in(coeffs),
-                     .signal_out(speaker_out));
+                     .signal_out(speaker_out),
+                     .done_out(delay_start));
     
     // ILA TO CHECK I2S
 		ila_0 i2s_ila (
