@@ -65,10 +65,14 @@ module top_level(
 
 		logic [7:0] delay_factor;
 		logic [7:0] scale_factor;
+		logic signed [7:0] error_low;
+		logic signed [7:0] error_high;
 		vio_0 vio(
 			.clk(clk_100mhz),
 			.probe_out0(delay_factor),
-			.probe_out1(scale_factor)
+			.probe_out1(scale_factor),
+			.probe_out2(error_low),
+			.probe_out3(error_high)
 		);
 
 		logic delay_done;
@@ -125,16 +129,23 @@ module top_level(
 												);
     
     //initialize error calculator instance
+    logic error_done;
     error_calculator find_error(.feedback_in(lp_feedback_out),//[25:10]),
                                 .error_out(error),
                                 .nc_on(sw[0]),
-                                .clk_in(clk_100mhz)
+                                .rst_in(btnd),
+                                .clk_in(clk_100mhz),
+                                .error_ready(lp_ambient_done),
+                                .error_low_in(error_low),
+                                .error_high_in(error_high),
+                                .error_locked_out(led[15]),
+                                .done_out(error_done)
 															);
     
     //initialize LMS instance
     NLMS nlms1(.clk_in(clk_100mhz), 
              .rst_in(btnd),
-             .ready_in(lp_ambient_done),
+             .ready_in(error_done),
              .error_in(error),
              .sample_in(sample),
              .norm_in(norm),
