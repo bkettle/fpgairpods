@@ -46,7 +46,7 @@ module NLMS(
             if (valid_out) begin
                     for (int k = 0; k < ARRAY_SIZE; k++) begin
                         if (offset_in >= k) temp_coeffs[k] <= temp_coeffs[k] + ((term*sample_in[offset_in-k]));
-                        if (offset_in < k) temp_coeffs[k] <= temp_coeffs[k] + ((term*sample_in[64+offset_in-k]));
+                        if (offset_in < k) temp_coeffs[k] <= temp_coeffs[k] + ((term*sample_in[ARRAY_SIZE+offset_in-k]));
                     end
                     done <= 1;
             end else begin
