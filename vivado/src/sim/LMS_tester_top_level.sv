@@ -20,14 +20,24 @@ module lms_tester_top_level(
     logic lms_done; //signals whether LMS is done updating weights
     logic signed [31:0] norm;
     
+    //initialize dc_remover instance
+    logic signed [15:0] dc_remover_out;
+    logic dc_remover_done;
+    dc_remover remove_dc(.clk_in(clk_in),
+                         .rst_in(rst_in),
+                         .ready_in(ready_in),
+                         .signal_in(x_in),
+                         .signal_out(dc_remover_out),
+                         .done_out(dc_remover_done));
+    
     logic lowpass_done;
     logic signed [15:0] lowpass_out;
     //initialize lowpass instance
     lowpass lp_filter(.clk_in(clk_in),
                       .rst_in(rst_in),
-                      .ready_in(ready_in),
+                      .ready_in(dc_remover_done),
                       .done_out(lowpass_done),
-                      .signal_in(x_in),
+                      .signal_in(dc_remover_out),
                       .signal_out(lowpass_out));
     
     //initialize sample buffer instance
@@ -58,8 +68,10 @@ module lms_tester_top_level(
                                 .rst_in(rst_in),
                                 .clk_in(clk_in),
                                 .error_ready(cup_sim_done),
-                                .error_low_in(-8'sd10),
-                                .error_high_in(8'sd15),
+                                .lock_low_in(-8'sd5),
+                                .lock_high_in(8'sd5),
+                                .unlock_low_in(-8'sd5),
+                                .unlock_high_in(8'sd5),
                                 .error_locked_out(error_locked),
                                 .done_out(error_done)
 															);
