@@ -1,6 +1,6 @@
 //Top level module (should not need to change except to uncomment ADC module)
 
-module top_level(   
+module music_top_level(   
 		input clk_100mhz,
 		input [15:0] sw,
 		input btnc, btnu, btnd, btnr, btnl,
@@ -16,20 +16,17 @@ module top_level(
 		output logic aud_pwm,
 		output logic aud_sd
   );  
-	parameter SAMPLE_COUNT = 2082;//gets approximately (will generate audio at approx 48 kHz sample rate.
 	
 	logic [15:0] sample_counter;
-	logic [11:0] adc_data;
 	logic [11:0] sampled_adc_data;
 	logic sample_trigger;
-	logic adc_ready;
 	logic enable;
 	logic [7:0] recorder_data;             
 	logic [7:0] vol_out;
 	logic pwm_val; //pwm signal (HI/LO)
 	
 	// rename input variables
-	logic reset; assign reset = btnu;
+	logic reset; assign reset = btnd;
 	assign ja0 = 1'b0; // test mic should be on the right 
 	logic i2s_lrclk_out; assign ja1 = i2s_lrclk_out;
 	logic i2s_data_in; assign i2s_data_in = ja2;
@@ -45,15 +42,19 @@ module top_level(
 	assign aud_sd = 1;
 	//assign led = sw; //just to look pretty 
 
-	// for fpgairpods, we replace this with the i2s module
-	//xadc_wiz_0 my_adc ( .dclk_in(clk_100mhz), .daddr_in(8'h13), //read from 0x13 for a
-	//                    .vauxn3(vauxn3),.vauxp3(vauxp3),
-	//                    .vp_in(1),.vn_in(1),
-	//                    .di_in(16'b0),
-	//                    .do_out(adc_data),.drdy_out(adc_ready),
-	//                    .den_in(1), .dwe_in(0));
-	//
-	
+	// use adc to get music data from headphone jack
+	logic [15:0] music_unsigned;
+	logic music_ready;
+	xadc_wiz_0 music_adc ( .dclk_in(clk_100mhz), .daddr_in(8'h13), //read from 0x13 for a
+	                    .vauxn3(vauxn3),.vauxp3(vauxp3),
+	                    .vp_in(1),.vn_in(1),
+	                    .di_in(16'b0),
+	                    .do_out(music_unsigned),
+											.drdy_out(music_ready),
+	                    .den_in(1), .dwe_in(0));
+
+	logic signed [15:0] music_sample;
+	assign music_sample = music_unsigned - 32767;
 
 	logic [15:0] feedback_sample;
 	logic [15:0] ambient_sample;
@@ -72,31 +73,101 @@ module top_level(
 		.right_sample_out(ambient_sample), // the right channel's sample
 		.new_sample_out(sample_pulse) // a pulse 1 cycle long when new samples are out
 	);
+
 	
-  recorder myrec( 
+	// process the inputs and generate speaker_out
+	logic signed [15:0] music_scaled;
+	music_test music_processor(
 		.clk_in(clk_100mhz),
 		.rst_in(reset),
-    .record_in(btnc),
-		.ready_in(sample_pulse),
-    .filter_in(sw[0]),
-		.echo_in(sw[1]),
-		.mic_in(feedback_sample[11:4]),
-    .data_out(recorder_data), 
-		.recording_led_out(led[15]),
-		.playback_led_out(led[14]), 
-		.mem_full_led_out(led[13]),
-		.filtering_led_out(led[12])
-	);   
-                                                                                            
-    volume_control vc (.vol_in(sw[15:13]),
-                       .signal_in(recorder_data), .signal_out(vol_out));
-    pwm (.clk_in(clk_100mhz), .rst_in(btnd), .level_in({~vol_out[7],vol_out[6:0]}), .pwm_out(pwm_val));
-    assign aud_pwm = pwm_val?1'bZ:1'b0; 
+		.ambient_sample(ambient_sample),
+		.feedback_sample(feedback_sample),
+		.mics_ready(sample_pulse),
+		.music_sample(music_sample),
+		.music_ready(music_ready),
+		.speaker_out(music_scaled)
+	);
+
+	// outputting to the speaker
+	pwm pwm (
+		.clk_in(clk_100mhz), 
+		.rst_in(btnd), 
+		.level_in({~music_scaled[7], music_scaled[6:0]}), 
+		.pwm_out(pwm_val)
+	);
+
+	assign aud_pwm = pwm_val ? 1'bZ : 1'b0;
+	
+  //recorder myrec( 
+	//	.clk_in(clk_100mhz),
+	//	.rst_in(reset),
+  //  .record_in(btnc),
+	//	.ready_in(sample_pulse),
+  //  .filter_in(sw[0]),
+	//	.echo_in(sw[1]),
+	//	.mic_in(feedback_sample[11:4]),
+  //  .data_out(recorder_data), 
+	//	.recording_led_out(led[15]),
+	//	.playback_led_out(led[14]), 
+	//	.mem_full_led_out(led[13]),
+	//	.filtering_led_out(led[12])
+	//);   
+  //                                                                                          
+  //  volume_control vc (.vol_in(sw[15:13]),
+  //                     .signal_in(recorder_data), .signal_out(vol_out));
+  //  pwm (.clk_in(clk_100mhz), .rst_in(btnd), .level_in({~vol_out[7],vol_out[6:0]}), .pwm_out(pwm_val));
+  //  assign aud_pwm = pwm_val?1'bZ:1'b0; 
     
 endmodule
 
+module music_test(
+		input clk_in,
+		input rst_in, 
+		input signed [15:0] ambient_sample,
+		input signed [15:0] feedback_sample,
+		input mics_ready,
+		input signed [15:0] music_sample,
+		input music_ready,
+		output logic signed [15:0] speaker_out
+	);
 
+	// music processing and output
+	logic [7:0] music_delay_factor;
+	logic [7:0] music_scale_factor;
 
+	vio_0 vio(
+		.clk(clk_in),
+		.probe_out0(music_delay_factor),
+		.probe_out1(music_scale_factor)
+	);
+
+	logic music_scale_done;
+	logic music_scale_start;
+	logic delay_done;
+	delay_and_scale delay_and_scale(
+		.clk_in(clk_in),
+		.reset_in(btnd),
+		.ready_in(music_ready),
+		.done_out(music_scale_done),
+		.delay_in(music_delay_factor), 
+		.scale_in(music_scale_factor),
+		.signal_in(music_sample),
+		.signal_out(speaker_out)
+	);
+
+	ila_0 i2s_ila (
+		.clk(clk_in),
+		.probe0(mics_ready),
+		.probe1(music_ready),
+		.probe2(1),
+		.probe3(1),
+		.probe4(feedback_sample),
+		.probe5(ambient_sample),
+		.probe6(music_sample),
+		.probe7(speaker_out)
+	);
+
+endmodule
 
 
 ///////////////////////////////////////////////////////////////////////////////
