@@ -1,23 +1,18 @@
 `default_nettype none    // catch typos!
 `timescale 1ns / 100ps 
 
-// test fir31 module
-// input samples are read from fir31.samples
-// output samples are written to fir31.output
+//test ability of NLMS and FIR to cancel input signal
 module lms_fir_tb();
-  logic clk,reset,ready;	// fir31 signals
+  logic clk,reset,ready;	// clock, reset, ready signals
   logic signed [15:0] x;
   logic signed [15:0] y;
   logic [20:0] scount;    // keep track of which sample we're at
-  logic [6:0] cycle;      // wait 64 clocks between samples
+  logic [6:0] cycle;      // wait 128 clocks between samples
   integer fin,fout,code;
 
   initial begin
     // open input/output files
-    //CHANGE THESE TO ACTUAL FILE NAMES!YOU MUST DO THIS
-    //fin = $fopen("sine2_10bits.waveform","r");
-    fin = $fopen("ila_plane_input.waveform","r");
-    //fin = $fopen("ila_test_input_clean.waveform","r");
+    fin = $fopen("ila_plane_input.waveform","r"); //conduct test on waveform extracted from ILA
     fout = $fopen("fir31.output","w");
     if (fin == 0 || fout == 0) begin
       $display("can't open file...");

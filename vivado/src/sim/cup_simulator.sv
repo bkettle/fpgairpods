@@ -1,5 +1,8 @@
 `timescale 1ns / 1ps
 
+//This module simulates the delay and scaling in our physical system
+//caused by the distance between the ambient mic and the speaker (delay)
+//and the passive filtering of the cup itself (scale)
 module cup_simulator(
 		input clk_in,
 		input reset_in,
@@ -10,11 +13,12 @@ module cup_simulator(
 		output logic signed [15:0] feedback_sample_out
   );
 
-	parameter SAMPLE_DELAY = 8'd64;
-	parameter SAMPLE_SCALE_FACTOR = 8'd128; // out of 256 
+	parameter SAMPLE_DELAY = 8'd64; //how much to delay
+	parameter SAMPLE_SCALE_FACTOR = 8'd128; //how much to scale
 
 	logic signed [15:0] filtered_ambient; 
-
+    
+    //use delay and scale module to simulate cup system
 	delay_and_scale delay_scale(
 		.clk_in(clk_in),
 		.reset_in(reset_in),
@@ -25,6 +29,7 @@ module cup_simulator(
 		.signal_in(ambient_sample_in),
 		.signal_out(filtered_ambient)
 	);
-
+    
+    //output the sum of the speaker output and the cup-filtered ambient input
 	assign feedback_sample_out = filtered_ambient + speaker_output_in;
 endmodule
