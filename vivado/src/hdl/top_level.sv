@@ -24,9 +24,18 @@ module top_level(
     logic lms_done; //signals whether LMS is done updating weights
     logic signed [31:0] norm;
     
-    //I2S INSTANTIATION (SETUP MICS AND SPEAKER)
     logic reset; assign reset = btnu;
 
+		///////////////////////////////////////////////////////////////////////////////
+		//////
+		////// Hardware Interfaces 
+		//////
+		///////////////////////////////////////////////////////////////////////////////
+
+		////////////////////////////////////
+		// Interface with I2S Peripherals
+		// (ambient and feedback mics)
+		////////////////////////////////////
 		logic i2s_lrclk_out; assign ja1 = i2s_lrclk_out;
 		logic i2s_data_in; assign i2s_data_in = ja2;
 		logic i2s_bclk_out; assign ja3 = i2s_bclk_out;
@@ -51,18 +60,73 @@ module top_level(
 			.right_sample_out(ambient_sample), // the right channel's sample
 			.new_sample_out(sample_pulse) // a pulse 1 cycle long when new samples are out
 		);
-	
+
+		//////////////////////////////////
+		// Interface with Headphone Jack
+		// (provides music samples)
+		//////////////////////////////////
+		logic [15:0] music_unsigned;
+		logic music_ready;
+		xadc_wiz_0 music_adc ( .dclk_in(clk_100mhz), .daddr_in(8'h13), //read from 0x13 for a
+												.vauxn3(vauxn3),.vauxp3(vauxp3),
+												.vp_in(1),.vn_in(1),
+												.di_in(16'b0),
+												.do_out(music_unsigned),
+												.drdy_out(music_ready),
+												.den_in(1), .dwe_in(0));
+
+		logic signed [15:0] music_sample;
+		assign music_sample = music_unsigned - 32767;
+
+		logic [7:0] music_delay_factor; // set by VIO
+		logic [7:0] music_scale_factor;
+		logic signed [15:0] music_scaled;
+		delay_and_scale music_scaler(
+			.clk_in(clk_100mhz),
+			.reset_in(btnd),
+			.ready_in(music_ready),
+			.done_out(),
+			.delay_in(music_delay_factor), 
+			.scale_in(music_scale_factor),
+			.signal_in(music_sample),
+			.signal_out(music_scaled)
+		);
+
+		//////////////////////////////////
+		// Output to Speaker
+		//////////////////////////////////
+		logic signed [15:0] antinoise_out;
 		logic signed [15:0] speaker_out;
-		logic signed [15:0] speaker_delayed;
+		logic error_locked; // assigned in error calculator module -- whether coeffs are converged
+
+		logic signed [15:0] switched_music;
+		assign switched_music = error_locked ? music_scaled : 0; // only play when converged
+
+		// assign speaker_out to the combination of 
+		// antinoise and music
+		assign speaker_out = (sw[1] ? antinoise_out : 0) + (sw[2] ? switched_music : 0);
+
 		logic signed [7:0] speaker_out_switched;
-		logic [7:0] vol_out;
-		assign aud_sd = 1;
-		logic pwm_val; //pwm signal (HI/LO)
-		
 		always_comb begin
-			 speaker_out_switched = sw[1] ? speaker_delayed[8:1]: sw[2] ? speaker_delayed[7:0]: 0;
+			 speaker_out_switched = speaker_out[8:1];
 		end
 
+		logic pwm_val; //pwm signal (HI/LO)
+		pwm pwm (
+			.clk_in(clk_100mhz), 
+			.rst_in(btnd), 
+			.level_in({~speaker_out_switched[7], speaker_out_switched[6:0]}), 
+			.pwm_out(pwm_val)
+		);
+		assign aud_pwm = pwm_val ? 1'bZ : 1'b0;
+
+		assign aud_sd = 1;
+		
+
+		/////////////////////////////////
+		// Get values from VIO 
+		/////////////////////////////////
+		
 		logic [7:0] delay_factor;
 		logic [7:0] scale_factor;
 		logic signed [7:0] lock_low;
@@ -78,29 +142,18 @@ module top_level(
 			.probe_out3(lock_high),
 			.probe_out4(manual_offset),
 			.probe_out5(unlock_low),
-			.probe_out6(unlock_high)
+			.probe_out6(unlock_high),
+			.probe_out7(music_delay_factor),
+			.probe_out8(music_scale_factor)
 		);
 
-		logic delay_done;
-		logic delay_start;
-		delay_and_scale delay_and_scale(
-			.clk_in(clk_100mhz),
-			.reset_in(btnd),
-			.ready_in(delay_start),
-			.done_out(delay_done),
-			.delay_in(delay_factor), // allow dynamically setting the delay by using switches 9-2
-			.scale_in(scale_factor), // set scale using top 5 switches
-			.signal_in(speaker_out),
-			.signal_out(speaker_delayed)
-		);
+		///////////////////////////////////////////////////////////////////////////////
+		//////
+		////// Main Active Noise Cancellation Logic
+		//////
+		///////////////////////////////////////////////////////////////////////////////
+
 		
-		pwm pwm (
-			.clk_in(clk_100mhz), 
-			.rst_in(btnd), 
-			.level_in({~speaker_out_switched[7], speaker_out_switched[6:0]}), 
-			.pwm_out(pwm_val)
-		);
-		assign aud_pwm = pwm_val ? 1'bZ : 1'b0;
     
     //initialize dc_remover instance
     logic signed [15:0] dc_ambient_out;
@@ -144,6 +197,7 @@ module top_level(
     logic signed [15:0] lp_feedback_in;
     assign lp_feedback_start = sw[4]?dc_feedback_done: sample_pulse;
     assign lp_feedback_in = sw[4]?dc_feedback_out: manual_offset+feedback_sample;            
+
      //initialize lowpass instance for feedback
     lowpass lp_feedback(.clk_in(clk_100mhz),
                       .rst_in(btnd),
@@ -164,9 +218,10 @@ module top_level(
     
     //initialize error calculator instance
     logic error_done;
+		assign led[15] = error_locked;
     error_calculator find_error(.feedback_in(lp_feedback_out),//[25:10]),
                                 .error_out(error),
-                                .nc_on(sw[0]),
+                                .nc_on(sw[0]), // sw[0] will lock coeffs when it's 0
                                 .rst_in(btnd),
                                 .clk_in(clk_100mhz),
                                 .error_ready(lp_ambient_done),
@@ -174,7 +229,7 @@ module top_level(
                                 .lock_high_in(lock_high),
                                 .unlock_low_in(unlock_low),
                                 .unlock_high_in(unlock_high),
-                                .error_locked_out(led[15]),
+                                .error_locked_out(error_locked),
                                 .done_out(error_done)
 															);
     
@@ -190,16 +245,33 @@ module top_level(
              .done(lms_done));
     
     //initialize FIR Filter instance
+		logic signed [15:0] fir_out; 
+		logic delay_start;
     fir63 fir_filter(.clk_in(clk_100mhz),
                      .rst_in(btnd),
                      .ready_in(lms_done),
                      .sample(sample),
                      .offset(offset),
                      .weights_in(coeffs),
-                     .signal_out(speaker_out),
+                     .signal_out(fir_out),
                      .done_out(delay_start));
+
+		// manually apply delay and scale adjustment to output
+		logic delay_done;
+		delay_and_scale delay_and_scale(
+			.clk_in(clk_100mhz),
+			.reset_in(btnd),
+			.ready_in(delay_start),
+			.done_out(delay_done),
+			.delay_in(delay_factor), // allow dynamically setting the delay by using switches 9-2
+			.scale_in(scale_factor), // set scale using top 5 switches
+			.signal_in(fir_out),
+			.signal_out(antinoise_out)
+		);
     
-    // ILA TO CHECK I2S
+		///////////////////////////////
+		// Monitor Signals for Debug
+		///////////////////////////////
 		ila_0 i2s_ila (
 			.clk(clk_100mhz),
 			.probe0(error),
@@ -210,7 +282,8 @@ module top_level(
 			.probe5(lp_feedback_out),
 			.probe6(lp_ambient_out),
 			.probe7(feedback_sample),
-			.probe8(speaker_delayed)
+			.probe8(antinoise_out),
+			.probe9(music_sample)
 		);
     
 endmodule
