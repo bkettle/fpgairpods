@@ -6,7 +6,7 @@ module fir63(
   input [5:0] offset,
   input signed [9:0] weights_in [63:0],
   output logic signed [15:0] signal_out,
-	output logic done_out
+  output logic done_out
 );
 
   logic [5:0] index;
@@ -29,20 +29,20 @@ module fir63(
             // reset index and accumulator  
             index <= 0;
             accumulator <= 0;
-						done_triggered <= 0;
-						done_out <= 0;
+            done_triggered <= 0;
+            done_out <= 0;
         end else begin
-					if (index < MAX_CLOCK_CYCLES) begin
-							// running sum of coeff * samples[offset-index]
-							accumulator <= accumulator + weights_in[index]*sample[offset-index];
-							index <= index + 1;
-							done_out <= 0;
-					end else begin 
-						signal_out <= accumulator[25:10];
-						// make done_out a pulse
-						done_out <= ~done_triggered;
-						done_triggered <= 1;
-					end
+            if (index < MAX_CLOCK_CYCLES) begin
+                // running sum of coeff * samples[offset-index]
+                accumulator <= accumulator + weights_in[index]*sample[offset-index];
+                index <= index + 1;
+                done_out <= 0;
+            end else begin 
+                signal_out <= accumulator[25:10];
+                // make done_out a pulse
+                done_out <= ~done_triggered;
+                done_triggered <= 1;
+            end
        end
     end
   end
