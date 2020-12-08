@@ -131,8 +131,8 @@ module top_level(
 		logic [7:0] scale_factor;
 		logic signed [7:0] lock_low;
 		logic signed [7:0] lock_high;
-		logic signed [7:0] unlock_low;
-		logic signed [7:0] unlock_high;
+		logic signed [15:0] unlock_low;
+		logic signed [15:0] unlock_high;
 		logic [10:0] manual_offset;
 		vio_0 vio(
 			.clk(clk_100mhz),
@@ -229,6 +229,7 @@ module top_level(
                                 .lock_high_in(lock_high),
                                 .unlock_low_in(unlock_low),
                                 .unlock_high_in(unlock_high),
+                                .unlockable(sw[5]),
                                 .error_locked_out(error_locked),
                                 .done_out(error_done)
 															);

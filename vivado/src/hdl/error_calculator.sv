@@ -8,8 +8,9 @@ module error_calculator(
     input logic rst_in,
     input logic signed [7:0] lock_high_in,
     input logic signed [7:0] lock_low_in,
-    input logic signed [7:0] unlock_low_in,
-    input logic signed [7:0] unlock_high_in,
+    input logic signed [15:0] unlock_low_in,
+    input logic signed [15:0] unlock_high_in,
+    input logic unlockable,
     output logic signed [15:0] error_out,
     output logic error_locked_out,
     output logic done_out
@@ -27,7 +28,7 @@ module error_calculator(
                 error_bad[i] <= 1;
             end
         end else if (error_ready) begin
-            if ((converged > 0) || (error_bad > 0)) 
+            if ((converged > 0) || ((error_bad > 0)&&unlockable)) 
                 converged <= {converged[CONVERGED_SIZE-2:0], ~((lock_low_in<feedback_in)&&(feedback_in<lock_high_in))};
             
             error_bad <= {error_bad[CONVERGED_SIZE-2:0], ~((unlock_low_in<feedback_in)&&(feedback_in<unlock_high_in))};
