@@ -19,6 +19,8 @@ module delay_and_scale(
 	assign scale_factor = {1'b0, scale_in}; // make into a signed number
 	logic signed [23:0] unscaled_next_output; // 8 fractional bits
 	logic signed [23:0] scaled_next_output; // 8 fractional bits
+	
+	// calculate the next output
 	always_comb begin
 		curr_index = hist_offset - delay_in - 1;
 		unscaled_next_output = history[curr_index];
@@ -27,6 +29,7 @@ module delay_and_scale(
 
 	always_ff @(posedge clk_in) begin
 		if (reset_in) begin
+		    // reset variables
 			hist_offset <= 0;
 			signal_out <= 1;
 			for (int i=0; i<256; i++)

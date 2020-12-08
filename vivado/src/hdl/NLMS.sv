@@ -12,9 +12,11 @@ module NLMS(
     output logic done
     );
     
-    logic signed [55:0] term;
-    logic signed [23:0] num;
+    logic signed [55:0] term; // gradient descent step value
+    logic signed [23:0] num; // numerator which will be divided
     
+    // divider module for calculating the gradient step
+    // dividend is num and divisor is norm
     div_gen_0 divide(.s_axis_dividend_tdata(num),
                     .s_axis_divisor_tdata(norm_in),
                     .s_axis_divisor_tvalid(ready_in), .s_axis_dividend_tvalid(ready_in),
@@ -39,7 +41,8 @@ module NLMS(
             for(int i = 0; i < ARRAY_SIZE; i++) temp_coeffs[i] <= 35'd0;
             done <= 0;
         end else begin
-            //if ready for LMS computation, update all 64 coefficients using gradient descent approximation
+            //if ready for LMS computation (term has been calculated in divider module)
+            // then update all 64 coefficients using gradient descent approximation
             if (valid_out) begin
                     for (int k = 0; k < ARRAY_SIZE; k++) begin
                         if (offset_in >= k) temp_coeffs[k] <= temp_coeffs[k] + ((term*sample_in[offset_in-k]));

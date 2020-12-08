@@ -12,7 +12,7 @@ module fir63(
   logic [5:0] index;
   logic signed [25:0] accumulator;
 
-	logic done_triggered; // 1 after done_out is triggered
+  logic done_triggered; // 1 after done_out is triggered
   
   // parameters used in ff
   parameter MAX_CLOCK_CYCLES = 63;
@@ -33,7 +33,7 @@ module fir63(
 						done_out <= 0;
         end else begin
 					if (index < MAX_CLOCK_CYCLES) begin
-							// running sum of coeff * samples[offset-index[
+							// running sum of coeff * samples[offset-index]
 							accumulator <= accumulator + weights_in[index]*sample[offset-index];
 							index <= index + 1;
 							done_out <= 0;

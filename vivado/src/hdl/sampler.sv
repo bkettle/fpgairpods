@@ -20,8 +20,7 @@ module sampler(
         for (int i = 0; i < SAMPLES_SIZE; i = i + 1) sample_out[i] <= 0;
     end else begin
         if (ready_in) begin
-            // ready_in increment offset, set samples
-            // reset index and accumulator 
+            // ready_in increment offset, set samples, and calculate the running_sum of norm 
             offset <= offset + 1;
             norm_out <= norm_out - sample_out[offset]*sample_out[offset] + signal_in*signal_in; 
             sample_out[offset] <= signal_in; 

@@ -10,6 +10,8 @@ module LMS(
     output logic signed [9:0] coeffs_out [255:0],
     output logic done
     );
+    // CURRENTLY NOT USED
+    // IMPLEMENTED NLMS FOR FASTER CONVERGENCE
     
     parameter ARRAY_SIZE = 256; //size of sample/coeffs array
     
