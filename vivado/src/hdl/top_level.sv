@@ -65,10 +65,20 @@ module top_level(
 
 		logic [7:0] delay_factor;
 		logic [7:0] scale_factor;
+		logic signed [7:0] lock_low;
+		logic signed [7:0] lock_high;
+		logic signed [7:0] unlock_low;
+		logic signed [7:0] unlock_high;
+		logic [10:0] manual_offset;
 		vio_0 vio(
 			.clk(clk_100mhz),
 			.probe_out0(delay_factor),
-			.probe_out1(scale_factor)
+			.probe_out1(scale_factor),
+			.probe_out2(lock_low),
+			.probe_out3(lock_high),
+			.probe_out4(manual_offset),
+			.probe_out5(unlock_low),
+			.probe_out6(unlock_high)
 		);
 
 		logic delay_done;
@@ -92,26 +102,54 @@ module top_level(
 		);
 		assign aud_pwm = pwm_val ? 1'bZ : 1'b0;
     
+    //initialize dc_remover instance
+    logic signed [15:0] dc_ambient_out;
+    logic dc_ambient_done;
+    dc_remover remove_dc_ambient(.clk_in(clk_100mhz),
+                                 .rst_in(btnd),
+                                 .ready_in(sample_pulse),
+                                 .signal_in(ambient_sample),
+                                 .signal_out(dc_ambient_out),
+                                 .done_out(dc_ambient_done));
+    
+    //initialize dc_remover instance
+    logic signed [15:0] dc_feedback_out;
+    logic dc_feedback_done;
+    dc_remover remove_dc_feedback(.clk_in(clk_100mhz),
+                                  .rst_in(btnd),
+                                  .ready_in(sample_pulse),
+                                  .signal_in(feedback_sample),
+                                  .signal_out(dc_feedback_out),
+                                  .done_out(dc_feedback_done));
+    
     logic lp_ambient_done; //pulse when lowpass is done computing (ambient)
     logic signed [15:0] lp_ambient_out; //output of lowpass filter (ambient)
+    logic lp_ambient_start;
+    logic signed [15:0] lp_ambient_in;
+    assign lp_ambient_start = sw[4]?dc_ambient_done: sample_pulse;
+    assign lp_ambient_in = sw[4]?dc_ambient_out: manual_offset+ambient_sample;
     //initialize lowpass instance for ambient noise
     lowpass lp_ambient(
 			.clk_in(clk_100mhz),
 			.rst_in(btnd),
-			.ready_in(sample_pulse),
+			.ready_in(lp_ambient_start),
 			.done_out(lp_ambient_done),
-			.signal_in(16'd1780+ambient_sample),
+			.signal_in(lp_ambient_in),
 			.signal_out(lp_ambient_out)
 		);
     
     logic lp_feedback_done; //pulse when lowpass is done computing (feedback)
-    logic signed [15:0] lp_feedback_out; //output of lowpass filter (feedback)              
+    logic signed [15:0] lp_feedback_out; //output of lowpass filter (feedback)
+    logic lp_feedback_start;
+    logic signed [15:0] lp_feedback_in;
+    assign lp_feedback_start = sw[4]?dc_feedback_done: sample_pulse;
+    assign lp_feedback_in = sw[4]?dc_feedback_out: manual_offset+feedback_sample;            
      //initialize lowpass instance for feedback
     lowpass lp_feedback(.clk_in(clk_100mhz),
                       .rst_in(btnd),
-                      .ready_in(sample_pulse),
+                      .ready_in(lp_feedback_start),
                       .done_out(lp_feedback_done),
-                      .signal_in(1780+ feedback_sample),
+                      .signal_in(lp_feedback_in),
                       .signal_out(lp_feedback_out));
     
     //initialize sample buffer instance
@@ -125,16 +163,25 @@ module top_level(
 												);
     
     //initialize error calculator instance
+    logic error_done;
     error_calculator find_error(.feedback_in(lp_feedback_out),//[25:10]),
                                 .error_out(error),
                                 .nc_on(sw[0]),
-                                .clk_in(clk_100mhz)
+                                .rst_in(btnd),
+                                .clk_in(clk_100mhz),
+                                .error_ready(lp_ambient_done),
+                                .lock_low_in(lock_low),
+                                .lock_high_in(lock_high),
+                                .unlock_low_in(unlock_low),
+                                .unlock_high_in(unlock_high),
+                                .error_locked_out(led[15]),
+                                .done_out(error_done)
 															);
     
     //initialize LMS instance
     NLMS nlms1(.clk_in(clk_100mhz), 
              .rst_in(btnd),
-             .ready_in(lp_ambient_done),
+             .ready_in(error_done),
              .error_in(error),
              .sample_in(sample),
              .norm_in(norm),
