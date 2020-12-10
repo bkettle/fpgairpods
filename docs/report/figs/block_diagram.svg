@@ -7,15 +7,25 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="186.02487mm"
-   height="128.91031mm"
-   viewBox="0 0 186.02487 128.91031"
+   width="11.363023in"
+   height="4.9652109in"
+   viewBox="0 0 288.62078 126.11636"
    version="1.1"
-   id="svg8"
+   id="svg1189"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
-   sodipodi:docname="block_diagram.svg">
+   sodipodi:docname="block_diagram.svg"
+   inkscape:export-filename="/home/ben/bd.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
   <defs
-     id="defs2" />
+     id="defs1183">
+    <rect
+       x="38.115753"
+       y="166.67287"
+       width="94.750351"
+       height="35.338398"
+       id="rect3586" />
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -23,98 +33,142 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="370.78335"
-     inkscape:cy="226.25449"
+     inkscape:zoom="1.1514318"
+     inkscape:cx="550.46946"
+     inkscape:cy="104.81901"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
      showgrid="false"
-     inkscape:window-width="1272"
-     inkscape:window-height="1403"
-     inkscape:window-x="4"
-     inkscape:window-y="31"
+     units="in"
+     inkscape:window-width="2558"
+     inkscape:window-height="1411"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
      inkscape:window-maximized="0"
-     inkscape:snap-nodes="false"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0" />
   <metadata
-     id="metadata5">
+     id="metadata1186">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Background"
+     transform="translate(6.9116863,-62.238002)">
+    <rect
+       style="fill:#b3b3b3;stroke:#000000;stroke-width:0.365;stroke-miterlimit:4;stroke-dasharray:2.92, 1.46;stroke-dashoffset:0"
+       id="rect3455"
+       width="229.89259"
+       height="98.291016"
+       x="36.24519"
+       y="62.420502"
+       ry="0" />
+    <rect
+       style="fill:#ececec;stroke:#000000;stroke-width:0.365001;stroke-miterlimit:4;stroke-dasharray:2.91999, 1.46;stroke-dashoffset:0"
+       id="rect3461"
+       width="183.62732"
+       height="41.058617"
+       x="79.940079"
+       y="118.0743" />
+    <rect
+       style="fill:#cccccc;stroke:#000000;stroke-width:0.365001;stroke-miterlimit:4;stroke-dasharray:2.91999, 1.46;stroke-dashoffset:0"
+       id="rect3465"
+       width="113.38303"
+       height="24.262405"
+       x="37.307251"
+       y="92.723877" />
+  </g>
+  <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-0.70752702,-129.41271)">
+     transform="translate(6.9116863,-62.238002)">
     <rect
-       style="fill:none;stroke:#000000;stroke-width:0.334903"
+       style="fill:none;stroke:#000000;stroke-width:0.235803"
        id="rect835"
-       width="50.102348"
-       height="24.579832"
-       x="58.934521"
-       y="214.68259" />
+       width="35.276684"
+       height="37.084785"
+       x="40.152992"
+       y="120.50837" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="83.759911"
-       y="225.47108"
+       style="font-style:normal;font-weight:normal;font-size:3.97421px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="57.632359"
+       y="135.98987"
        id="text839"><tspan
          sodipodi:role="line"
-         x="83.759911"
-         y="225.47108"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="57.632359"
+         y="135.98987"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
          id="tspan867">I2S</tspan><tspan
          sodipodi:role="line"
-         x="84.544487"
-         y="232.52664"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="58.184772"
+         y="140.95763"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
          id="tspan871">RECEIVER </tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="59.948025"
-       y="218.15228"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="40.866592"
+       y="134.94133"
        id="text843"><tspan
          sodipodi:role="line"
          id="tspan841"
-         x="59.948025"
-         y="218.15228"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.15;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583">SDA</tspan><tspan
+         x="40.866592"
+         y="134.94133"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.15;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">SDA</tspan><tspan
          sodipodi:role="line"
-         x="59.948025"
-         y="222.20923"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.15;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583"
+         x="40.866592"
+         y="137.79779"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.15;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
          id="tspan845">WS</tspan><tspan
          sodipodi:role="line"
-         x="59.948025"
-         y="226.26617"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.15;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583"
+         x="40.866592"
+         y="140.65425"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.15;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
          id="tspan847">SCL</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="75.066345"
-       y="237.88773"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="51.511284"
+       y="156.60362"
        id="text893"><tspan
          sodipodi:role="line"
          id="tspan891"
-         x="75.066345"
-         y="237.88773"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583">FEEDBACK_OUT (R)</tspan></text>
+         x="51.511284"
+         y="156.60362"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">FEEDBACK_OUT (R)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;text-align:end;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="74.6231"
+       y="123.22203"
+       id="text893-8"><tspan
+         sodipodi:role="line"
+         id="tspan891-9"
+         x="74.6231"
+         y="123.22203"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:end;text-anchor:end;stroke-width:0.186291">AMBIENT_OUT (L)</tspan><tspan
+         sodipodi:role="line"
+         x="74.6231"
+         y="126.37904"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:end;text-anchor:end;stroke-width:0.186291"
+         id="tspan2060">READY_OUT</tspan></text>
     <g
        id="g1006"
-       transform="translate(4.1250712,123.25267)">
+       transform="matrix(0.7040924,0,0,0.7040924,-4.5054158,68.184636)">
       <g
          id="g935"
          transform="translate(0.31677059)">
@@ -213,655 +267,1281 @@
       </g>
     </g>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 44.040758,214.55381 H 55.77197 v 2.14678 h 3.087613"
-       id="path1008" />
+       style="fill:none;stroke:#000000;stroke-width:0.186291px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 23.598914,132.46907 h 8.259858 v 1.51153 h 8.441447"
+       id="path1008"
+       sodipodi:nodetypes="cccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 43.972977,218.7283 h 11.716271 v 2.00119 h 3.201164"
-       id="path1010" />
+       style="fill:none;stroke:#000000;stroke-width:0.186291px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 23.55119,135.40829 h 8.249338 v 1.40902 h 8.543813"
+       id="path1010"
+       sodipodi:nodetypes="cccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 43.912488,222.63268 h 11.82193 v 2.78758 h 3.251197"
-       id="path1012" />
+       style="fill:none;stroke:#000000;stroke-width:0.186291px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 23.5086,138.15733 h 8.323732 v 1.96272 h 8.49519"
+       id="path1012"
+       sodipodi:nodetypes="cccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 46.762685,214.70138 v 28.64344 h -2.708111"
-       id="path1014" />
+       style="fill:none;stroke:#000000;stroke-width:0.186291px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 25.515403,132.57297 V 152.7406 H 23.608642"
+       id="path1014"
+       sodipodi:nodetypes="ccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 44.050479,247.53062 h 5.750406 v -28.74483"
+       style="fill:none;stroke:#000000;stroke-width:0.186291px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 23.605758,155.68779 h 4.048818 v -20.23902"
        id="path1016"
        sodipodi:nodetypes="ccc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 43.882653,251.73113 h 9.70108 v -29.02558"
-       id="path1018" />
+       style="fill:none;stroke:#000000;stroke-width:0.186291px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 23.487594,158.64533 h 6.830458 v -20.43668"
+       id="path1018"
+       sodipodi:nodetypes="ccc" />
     <circle
-       style="fill:#000000;stroke:#000000;stroke-width:0.264999"
+       style="fill:#000000;stroke:#000000;stroke-width:0.186584"
        id="path1020"
-       cx="46.620926"
-       cy="214.3456"
-       r="0.67631394" />
+       cx="25.415594"
+       cy="132.32248"
+       r="0.4761875" />
     <circle
-       style="fill:#000000;stroke:#000000;stroke-width:0.264999"
+       style="fill:#000000;stroke:#000000;stroke-width:0.186584"
        id="path1020-6"
-       cx="49.828163"
-       cy="218.6219"
-       r="0.67631394" />
+       cx="27.673784"
+       cy="135.33339"
+       r="0.4761875" />
     <circle
-       style="fill:#000000;stroke:#000000;stroke-width:0.264999"
+       style="fill:#000000;stroke:#000000;stroke-width:0.186584"
        id="path1020-0"
-       cx="53.569935"
-       cy="222.49731"
-       r="0.67631394" />
+       cx="30.30834"
+       cy="138.06204"
+       r="0.4761875" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="19.940367"
-       y="203.33069"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="6.630013"
+       y="124.56696"
        id="text1069"><tspan
          sodipodi:role="line"
          id="tspan1067"
-         x="19.940367"
-         y="203.33069"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583">AUDIO_IN</tspan></text>
+         x="6.630013"
+         y="124.56696"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">AUDIO_IN</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="20.018816"
-       y="232.23569"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="6.6852498"
+       y="144.91875"
        id="text1069-4"><tspan
          sodipodi:role="line"
          id="tspan1067-8"
-         x="20.018816"
-         y="232.23569"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583">AUDIO_IN</tspan></text>
+         x="6.6852498"
+         y="144.91875"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">AUDIO_IN</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="8.8322744"
-       y="195.547"
+       style="font-style:normal;font-weight:normal;font-size:2.98066px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="-1.191107"
+       y="119.08652"
        id="text1093"><tspan
          sodipodi:role="line"
          id="tspan1091"
-         x="8.8322744"
-         y="195.547"
-         style="font-size:4.23333px;text-align:center;text-anchor:middle;stroke-width:0.264583">ambient</tspan><tspan
+         x="-1.191107"
+         y="119.08652"
+         style="font-size:2.98066px;text-align:center;text-anchor:middle;stroke-width:0.186291">ambient</tspan><tspan
          sodipodi:role="line"
-         x="8.8322744"
-         y="200.83865"
-         style="font-size:4.23333px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="-1.191107"
+         y="122.81234"
+         style="font-size:2.98066px;text-align:center;text-anchor:middle;stroke-width:0.186291"
          id="tspan1095">noise</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="9.2038021"
-       y="224.33641"
+       style="font-style:normal;font-weight:normal;font-size:2.98066px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="-0.92951423"
+       y="139.35693"
        id="text1114"><tspan
          sodipodi:role="line"
          id="tspan1112"
-         x="9.2038012"
-         y="224.33641"
-         style="font-size:4.23333px;text-align:center;text-anchor:middle;stroke-width:0.264583">feedback</tspan><tspan
+         x="-0.92951435"
+         y="139.35693"
+         style="font-size:2.98066px;text-align:center;text-anchor:middle;stroke-width:0.186291">feedback</tspan><tspan
          sodipodi:role="line"
-         x="9.2038021"
-         y="229.62807"
-         style="font-size:4.23333px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         x="-0.92951417"
+         y="143.08276"
+         style="font-size:2.98066px;text-align:center;text-anchor:middle;stroke-width:0.186291"
          id="tspan1116">audio</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="76.988121"
-       y="217.93584"
-       id="text893-8"><tspan
-         sodipodi:role="line"
-         id="tspan891-9"
-         x="76.988121"
-         y="217.93584"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583">AMBIENT_OUT (L)</tspan></text>
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:0.297789"
-       id="rect835-7"
-       width="50.139462"
-       height="19.419359"
-       x="131.14824"
-       y="156.29532" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="141.22072"
-       y="168.06239"
-       id="text1153"><tspan
-         sodipodi:role="line"
-         id="tspan1151"
-         x="141.22072"
-         y="168.06239"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.264583">FIR FILTER</tspan></text>
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:0.353611"
-       id="rect835-7-7"
-       width="50.083641"
-       height="27.412724"
-       x="130.97078"
-       y="181.36296" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="155.90819"
-       y="193.5679"
-       id="text1172"><tspan
-         sodipodi:role="line"
-         id="tspan1170"
-         x="155.90819"
-         y="193.5679"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583">LMS ADAPTIVE</tspan><tspan
-         sodipodi:role="line"
-         x="155.90819"
-         y="200.62346"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="tspan1174">ALGORITHM</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="144.29639"
-       y="184.5078"
-       id="text1178"><tspan
-         sodipodi:role="line"
-         id="tspan1176"
-         x="144.29639"
-         y="184.5078"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583">WEIGHTS_OUT</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="145.58443"
-       y="174.63284"
-       id="text1178-6"><tspan
-         sodipodi:role="line"
-         id="tspan1176-4"
-         x="145.58443"
-         y="174.63284"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583">WEIGHTS_IN</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 155.79918,175.87244 v 5.29978"
-       id="path1198" />
+       style="fill:none;stroke:#000000;stroke-width:0.186291px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 6.2723922,144.13972 H -0.72033777"
+       id="path1270"
+       sodipodi:nodetypes="cc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 157.03237,177.44541 -2.47542,2.32421"
-       id="path1200" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82222px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="157.50179"
-       y="179.66772"
-       id="text1204"><tspan
-         sodipodi:role="line"
-         id="tspan1202"
-         x="157.50179"
-         y="179.66772"
-         style="font-size:2.82222px;stroke-width:0.264583">32x10</tspan></text>
+       style="fill:none;stroke:#000000;stroke-width:0.186291px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 6.3241922,123.65101 H -0.56889377"
+       id="path1272"
+       sodipodi:nodetypes="cc" />
     <rect
-       style="fill:none;stroke:#000000;stroke-width:0.315886"
-       id="rect835-7-7-0"
-       width="50.121365"
-       height="21.859066"
-       x="130.69635"
-       y="218.63882" />
+       style="fill:none;stroke:#000000;stroke-width:0.235803"
+       id="rect835-3"
+       width="35.276684"
+       height="17.306475"
+       x="40.275074"
+       y="96.244499" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="155.75986"
-       y="228.06694"
-       id="text1240"><tspan
+       style="font-style:normal;font-weight:normal;font-size:3.97421px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="57.754444"
+       y="103.8406"
+       id="text839-6"><tspan
          sodipodi:role="line"
-         id="tspan1238"
-         x="155.75986"
-         y="228.06694"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583">ERROR</tspan><tspan
+         x="57.754444"
+         y="103.8406"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan871-5">XADC</tspan><tspan
          sodipodi:role="line"
-         x="155.75986"
-         y="235.1225"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="tspan1242">CALCULATOR</tspan></text>
+         x="58.306858"
+         y="108.80836"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan1982">(MUSIC INPUT) </tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="131.07333"
-       y="221.72113"
-       id="text1246"><tspan
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="40.988674"
+       y="98.687492"
+       id="text843-3"><tspan
          sodipodi:role="line"
-         id="tspan1244"
-         x="131.07333"
-         y="221.72113"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583">DESIRED_IN</tspan></text>
+         x="40.988674"
+         y="98.687492"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.15;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan847-2">VIN</tspan><tspan
+         sodipodi:role="line"
+         x="40.988674"
+         y="101.54395"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.15;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan1989">GND</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.52777px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="130.86139"
-       y="239.75079"
-       id="text1246-3"><tspan
+       x="38.16346"
+       y="171.85527"
+       id="text893-9"><tspan
          sodipodi:role="line"
-         id="tspan1244-0"
-         x="130.86139"
-         y="239.75079"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583">FEEDBACK_IN</tspan></text>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 19.432449,231.12926 H 9.5008965"
-       id="path1270" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 19.506019,202.02981 H 9.7159882"
-       id="path1272" />
+         id="tspan891-1"
+         x="38.16346"
+         y="171.85527"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583" /></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="131.48566"
-       y="159.34372"
-       id="text1276"><tspan
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="60.089077"
+       y="98.535088"
+       id="text893-8-2"><tspan
          sodipodi:role="line"
-         id="tspan1274"
-         x="131.48566"
-         y="159.34372"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583">SIGNAL_IN</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="159.68723"
-       y="159.16034"
-       id="text1276-9"><tspan
-         sodipodi:role="line"
-         id="tspan1274-2"
-         x="159.68723"
-         y="159.16034"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583">SIGNAL_OUT</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="131.59593"
-       y="204.06624"
-       id="text1298"><tspan
-         sodipodi:role="line"
-         id="tspan1296"
-         x="131.59593"
-         y="204.06624"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583">ERROR_IN</tspan><tspan
-         sodipodi:role="line"
-         x="131.59593"
-         y="207.66811"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583"
-         id="tspan1300">SIGNAL_IN</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="161.45213"
-       y="221.55608"
-       id="text1304"><tspan
-         sodipodi:role="line"
-         id="tspan1302"
-         x="161.45213"
-         y="221.55608"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583">ERROR_OUT</tspan></text>
+         id="tspan891-9-7"
+         x="60.089077"
+         y="98.535088"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">SAMPLE_OUT</tspan></text>
     <rect
-       style="fill:none;stroke:#0000ff;stroke-width:0.265224"
-       id="rect835-5"
-       width="31.333723"
-       height="24.649513"
-       x="51.246597"
-       y="184.49666" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="67.123299"
-       y="195.55466"
-       id="text1323"><tspan
-         sodipodi:role="line"
-         id="tspan1321"
-         x="67.123299"
-         y="195.55466"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#0000ff;stroke-width:0.264583">MUSIC</tspan><tspan
-         sodipodi:role="line"
-         x="67.123299"
-         y="202.61021"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#0000ff;stroke-width:0.264583"
-         id="tspan1325">PLAYER</tspan></text>
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:0.255889;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect835-5-4-4"
-       width="38.727016"
-       height="24.729265"
-       x="75.723473"
-       y="150.92998" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="93.558372"
-       y="165.32097"
-       id="text1323-0-6"><tspan
-         sodipodi:role="line"
-         x="93.558372"
-         y="165.32097"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="tspan1325-9-9">DAC</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="92.239807"
-       y="154.4926"
-       id="text1276-2"><tspan
-         sodipodi:role="line"
-         id="tspan1274-24"
-         x="92.239807"
-         y="154.4926"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583">ANALOG_OUT</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="76.599091"
-       y="174.49742"
-       id="text1276-2-7"><tspan
-         sodipodi:role="line"
-         id="tspan1274-24-7"
-         x="76.599091"
-         y="174.49742"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583">DIGITAL_IN</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="62.894123"
-       y="207.80457"
-       id="text1412-5"><tspan
-         sodipodi:role="line"
-         id="tspan1410-4"
-         x="62.894123"
-         y="207.80457"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';fill:#0000ff;stroke-width:0.264583">MUSIC_OUT</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="51.87413"
-       y="188.02357"
-       id="text1412-5-8"><tspan
-         sodipodi:role="line"
-         id="tspan1410-4-1"
-         x="51.87413"
-         y="188.02357"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';fill:#0000ff;stroke-width:0.264583">AUDIO_SOURCE</tspan></text>
-    <path
-       style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 51.252032,186.76552 H 9.1237862"
-       id="path1456" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="1.0322764"
-       y="179.51544"
-       id="text1460"><tspan
-         sodipodi:role="line"
-         id="tspan1458"
-         x="1.0322764"
-         y="179.51544"
-         style="font-size:4.23333px;fill:#0000ff;stroke-width:0.264583">user audio</tspan><tspan
-         sodipodi:role="line"
-         x="1.0322764"
-         y="184.8071"
-         style="font-size:4.23333px;fill:#0000ff;stroke-width:0.264583"
-         id="tspan1462">(possibly bluetooth)</tspan></text>
-    <rect
-       style="fill:none;stroke:#000000;stroke-width:0.234563"
+       style="fill:none;stroke:#000000;stroke-width:0.165154"
        id="rect835-5-4"
-       width="24.395887"
-       height="24.762568"
-       x="44.982861"
-       y="150.93031" />
+       width="27.712191"
+       height="17.435139"
+       x="81.058372"
+       y="120.42204" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="56.861591"
-       y="165.76289"
+       style="font-style:normal;font-weight:normal;font-size:3.97421px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="94.091011"
+       y="128.83131"
        id="text1323-0"><tspan
          sodipodi:role="line"
-         x="56.861591"
-         y="165.76289"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="tspan1325-9">ADD</tspan></text>
+         x="94.091011"
+         y="128.83131"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan1325-9">DC</tspan><tspan
+         sodipodi:role="line"
+         x="94.091011"
+         y="133.79907"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan2055">REMOVER</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="54.044567"
-       y="174.40778"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="97.728981"
+       y="122.83206"
        id="text1412"><tspan
          sodipodi:role="line"
          id="tspan1410"
-         x="54.044567"
-         y="174.40778"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583">SIG_OUT</tspan></text>
+         x="97.728981"
+         y="122.83206"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">SIG_OUT</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.52777px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="45.773891"
-       y="154.32021"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="81.670364"
+       y="122.80882"
        id="text1452"><tspan
          sodipodi:role="line"
-         id="tspan1450"
-         x="45.773891"
-         y="154.32021"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;line-height:1;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583">A_IN</tspan><tspan
+         x="81.670364"
+         y="122.80882"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan1454">SIG_IN</tspan><tspan
          sodipodi:role="line"
-         x="45.773891"
-         y="157.84798"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777px;line-height:1;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.264583"
-         id="tspan1454">B_IN</tspan></text>
+         x="81.670364"
+         y="125.2927"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2064">READY_IN</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.165154"
+       id="rect835-5-4-2"
+       width="27.712191"
+       height="17.435139"
+       x="81.185417"
+       y="140.2298" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.97421px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="94.218048"
+       y="148.63908"
+       id="text1323-0-0"><tspan
+         sodipodi:role="line"
+         x="94.218048"
+         y="148.63908"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan1325-9-2">DC</tspan><tspan
+         sodipodi:role="line"
+         x="94.218048"
+         y="153.60684"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan2055-3">REMOVER</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="97.958168"
+       y="142.63651"
+       id="text1412-7"><tspan
+         sodipodi:role="line"
+         id="tspan1410-5"
+         x="97.958168"
+         y="142.63651"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">SIG_OUT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="81.797409"
+       y="142.61661"
+       id="text1452-9"><tspan
+         sodipodi:role="line"
+         x="81.797409"
+         y="142.61661"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan1454-2">SIG_IN</tspan><tspan
+         sodipodi:role="line"
+         x="81.797409"
+         y="145.10049"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2064-2">READY_IN</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.165154"
+       id="rect835-5-4-8"
+       width="27.712191"
+       height="17.435139"
+       x="80.844246"
+       y="95.997246" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.97421px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="94.510445"
+       y="103.6376"
+       id="text1323-0-9"><tspan
+         sodipodi:role="line"
+         x="94.510445"
+         y="103.6376"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan2055-36">- 32767</tspan><tspan
+         sodipodi:role="line"
+         x="94.510445"
+         y="108.60537"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan2146">(CENTER)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="97.812302"
+       y="112.52755"
+       id="text1412-1"><tspan
+         sodipodi:role="line"
+         id="tspan1410-2"
+         x="97.812302"
+         y="112.52755"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">SIG_OUT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="81.45623"
+       y="98.384041"
+       id="text1452-93"><tspan
+         sodipodi:role="line"
+         x="81.45623"
+         y="98.384041"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan1454-1">SIG_IN</tspan><tspan
+         sodipodi:role="line"
+         x="81.45623"
+         y="99.573822"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2064-9" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="96.321541"
+       y="136.90999"
+       id="text1412-4"><tspan
+         sodipodi:role="line"
+         id="tspan1410-7"
+         x="96.321541"
+         y="136.90999"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">DONE_OUT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="96.554832"
+       y="156.82158"
+       id="text1412-4-8"><tspan
+         sodipodi:role="line"
+         id="tspan1410-7-4"
+         x="96.554832"
+         y="156.82158"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">DONE_OUT</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.165154"
+       id="rect835-5-4-5"
+       width="27.712191"
+       height="17.435139"
+       x="112.21031"
+       y="120.43901" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.97421px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="125.80907"
+       y="131.6147"
+       id="text1323-0-03"><tspan
+         sodipodi:role="line"
+         x="125.80907"
+         y="131.6147"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan2264">LOWPASS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="128.86835"
+       y="122.8303"
+       id="text1412-0"><tspan
+         sodipodi:role="line"
+         id="tspan1410-6"
+         x="128.86835"
+         y="122.8303"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">SIG_OUT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="112.82228"
+       y="122.82581"
+       id="text1452-3"><tspan
+         sodipodi:role="line"
+         x="112.82228"
+         y="122.82581"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan1454-20">SIG_IN</tspan><tspan
+         sodipodi:role="line"
+         x="112.82228"
+         y="125.30969"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2064-6">READY_IN</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.165154"
+       id="rect835-5-4-2-1"
+       width="27.712191"
+       height="17.435139"
+       x="112.33736"
+       y="140.2468" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.97421px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="125.31616"
+       y="150.8416"
+       id="text1323-0-0-5"><tspan
+         sodipodi:role="line"
+         x="125.31616"
+         y="150.8416"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan2055-3-4">LOWPASS</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="129.00739"
+       y="142.53839"
+       id="text1412-7-7"><tspan
+         sodipodi:role="line"
+         id="tspan1410-5-6"
+         x="129.00739"
+         y="142.53839"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">SIG_OUT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="112.94935"
+       y="142.63358"
+       id="text1452-9-5"><tspan
+         sodipodi:role="line"
+         x="112.94935"
+         y="142.63358"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan1454-2-6">SIG_IN</tspan><tspan
+         sodipodi:role="line"
+         x="112.94935"
+         y="145.11746"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2064-2-9">READY_IN</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="127.46188"
+       y="136.84581"
+       id="text1412-4-3"><tspan
+         sodipodi:role="line"
+         id="tspan1410-7-7"
+         x="127.46188"
+         y="136.84581"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">DONE_OUT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="127.61215"
+       y="156.76744"
+       id="text1412-4-8-4"><tspan
+         sodipodi:role="line"
+         id="tspan1410-7-4-5"
+         x="127.61215"
+         y="156.76744"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">DONE_OUT</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.222413"
+       id="rect835-7-7-0"
+       width="35.46273"
+       height="17.24592"
+       x="143.4044"
+       y="130.50989" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.97421px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="160.7959"
+       y="136.95898"
+       id="text1240"><tspan
+         sodipodi:role="line"
+         id="tspan1238"
+         x="160.7959"
+         y="136.95898"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291">ERROR</tspan><tspan
+         sodipodi:role="line"
+         x="160.7959"
+         y="141.92674"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan1242">CALCULATOR</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.05;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="143.55875"
+       y="144.43018"
+       id="text1246-3"><tspan
+         sodipodi:role="line"
+         x="143.55875"
+         y="144.43018"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2312">READY_IN</tspan><tspan
+         sodipodi:role="line"
+         x="143.55875"
+         y="147.09041"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan3263">FEEDBACK_IN</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="160.51772"
+       y="132.77702"
+       id="text1304"><tspan
+         sodipodi:role="line"
+         id="tspan1302"
+         x="160.51772"
+         y="132.77702"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">ERROR_LOCKED</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="178.54558"
+       y="144.43028"
+       id="text1304-2"><tspan
+         sodipodi:role="line"
+         id="tspan1302-5"
+         x="178.54558"
+         y="144.43028"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:end;text-anchor:end;stroke-width:0.186291">ERROR_OUT</tspan><tspan
+         sodipodi:role="line"
+         x="178.54558"
+         y="146.96632"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:end;text-anchor:end;stroke-width:0.186291"
+         id="tspan2727">DONE_OUT</tspan></text>
+    <g
+       id="g3305"
+       transform="translate(-14.324981,-1.0089649)">
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.248974"
+         id="rect835-7-7"
+         width="35.263515"
+         height="19.30109"
+         x="201.15724"
+         y="120.08387" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:3.97421px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+         x="218.71552"
+         y="128.67729"
+         id="text1172"><tspan
+           sodipodi:role="line"
+           id="tspan1170"
+           x="218.71552"
+           y="128.67729"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291">LMS ADAPTIVE</tspan><tspan
+           sodipodi:role="line"
+           x="218.71552"
+           y="133.64505"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+           id="tspan1174">ALGORITHM</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+         x="216.89607"
+         y="138.57913"
+         id="text1178"><tspan
+           sodipodi:role="line"
+           id="tspan1176"
+           x="216.89607"
+           y="138.57913"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">WEIGHTS_OUT</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+         x="201.59743"
+         y="136.06909"
+         id="text1298"><tspan
+           sodipodi:role="line"
+           id="tspan1296"
+           x="201.59743"
+           y="136.06909"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291" /><tspan
+           sodipodi:role="line"
+           x="201.59743"
+           y="138.60513"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+           id="tspan1300">READY_IN</tspan></text>
+      <rect
+         style="fill:none;stroke:#000000;stroke-width:0.209671"
+         id="rect835-7"
+         width="35.302814"
+         height="14.523978"
+         x="201.26701"
+         y="142.39328" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:3.97421px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+         x="208.35896"
+         y="150.67841"
+         id="text1153"><tspan
+           sodipodi:role="line"
+           id="tspan1151"
+           x="208.35896"
+           y="150.67841"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.186291">FIR FILTER</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+         x="217.55209"
+         y="144.49049"
+         id="text1178-6"><tspan
+           sodipodi:role="line"
+           id="tspan1176-4"
+           x="217.55209"
+           y="144.49049"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">WEIGHTS_IN</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+         x="201.50458"
+         y="144.53964"
+         id="text1276"><tspan
+           sodipodi:role="line"
+           id="tspan1274"
+           x="201.50458"
+           y="144.53964"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.05;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">SIGNAL_IN</tspan><tspan
+           sodipodi:role="line"
+           x="201.50458"
+           y="147.02353"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:0.95;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+           id="tspan3356">READY_IN</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+         x="235.95906"
+         y="153.60358"
+         id="text1276-9"><tspan
+           sodipodi:role="line"
+           id="tspan1274-2"
+           x="235.95906"
+           y="153.60358"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:end;text-anchor:end;stroke-width:0.186291">DONE_OUT</tspan><tspan
+           sodipodi:role="line"
+           x="235.95906"
+           y="156.13962"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:end;text-anchor:end;stroke-width:0.186291"
+           id="tspan2642">SIGNAL_OUT</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+         x="201.38411"
+         y="119.83244"
+         id="text1298-8"><tspan
+           sodipodi:role="line"
+           id="tspan1296-8"
+           x="201.38411"
+           y="119.83244"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291" /><tspan
+           sodipodi:role="line"
+           x="201.38411"
+           y="122.36848"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+           id="tspan1300-4">ERROR_IN</tspan><tspan
+           sodipodi:role="line"
+           x="201.38411"
+           y="124.90453"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+           id="tspan2455">SIGNAL_IN</tspan></text>
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.890674;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 224.1793,139.34767 v 3.02571"
+         id="path2457" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+         x="224.17763"
+         y="119.86572"
+         id="text1298-84"><tspan
+           sodipodi:role="line"
+           id="tspan1296-81"
+           x="224.17763"
+           y="119.86572"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291" /><tspan
+           sodipodi:role="line"
+           x="224.17763"
+           y="122.40176"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+           id="tspan1300-0">DONE_OUT</tspan></text>
+      <path
+         style="fill:none;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 236.47107,121.47559 h 1.90644 v 37.44356 h -39.37107 v -12.6906 h 2.13764"
+         id="path3383" />
+      <path
+         style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 236.58755,155.42742 h 2.6988 v -8.203 h 2.11038"
+         id="path3385" />
+      <path
+         style="fill:none;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 236.61328,152.77887 h 0.79086 v -8.38833 h 4.03844"
+         id="path3387" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.065;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 119.69883,70.422329 h 5.66291 v 26.806014 h 1.15413"
+         id="path3389" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.065;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 119.76529,73.19022 h 4.07728 v 26.43955 h 2.63156"
+         id="path3391" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.065;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 241.41738,132.5561 h -1.80527 V 78.471727 H 119.80882"
+         id="path3393"
+         sodipodi:nodetypes="cccc" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.065;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="M 119.77285,75.685421 H 240.0874 v 54.249229 h 1.46689"
+         id="path3395" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:0.065;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 119.7682,80.979932 h 3.73033 v 36.323958 h 32.36435 v 15.78871 h 1.8308"
+         id="path3397" />
+      <path
+         style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 162.01746,99.456013 h 7.81816 v 1.163357 h 10.48857"
+         id="path3415" />
+      <path
+         style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 180.1825,98.181555 h -3.42535 v 20.226315 h 102.46386 v 11.18378 h -2.17294"
+         id="path3419" />
+      <path
+         style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 208.03278,112.87435 h 2.3647 V 98.119931 h 2.5219"
+         id="path3421" />
+      <path
+         style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 122.88433,112.80229 h 1.8221 v 1.37751 h 1.65975"
+         id="path3423" />
+    </g>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.222413"
+       id="rect835-7-7-0-3"
+       width="35.46273"
+       height="19.824692"
+       x="112.14938"
+       y="94.717865" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.97421px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="129.54088"
+       y="103.74574"
+       id="text1240-1"><tspan
+         sodipodi:role="line"
+         x="129.54088"
+         y="103.74574"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan1242-9">DELAY AND</tspan><tspan
+         sodipodi:role="line"
+         x="129.54088"
+         y="108.71351"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan2503">SCALE</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="112.38317"
+       y="111.25791"
+       id="text1246-3-2"><tspan
+         sodipodi:role="line"
+         x="112.38317"
+         y="111.25791"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.05;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2312-0">READY_IN</tspan><tspan
+         sodipodi:role="line"
+         x="112.38317"
+         y="113.86598"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.05;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2547">SIGNAL_IN</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="132.29552"
+       y="96.872566"
+       id="text1304-6"><tspan
+         sodipodi:role="line"
+         id="tspan1302-8"
+         x="132.29552"
+         y="96.872566"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">SCALED_OUT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="135.29823"
+       y="99.260002"
+       id="text1304-2-9"><tspan
+         sodipodi:role="line"
+         id="tspan1302-5-2"
+         x="135.29823"
+         y="99.260002"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">DONE_OUT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="112.54838"
+       y="96.887451"
+       id="text1246-3-2-7"><tspan
+         sodipodi:role="line"
+         x="112.54838"
+         y="96.887451"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.05;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2312-0-2">SCALE_IN</tspan><tspan
+         sodipodi:role="line"
+         x="112.54838"
+         y="99.495522"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.05;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2547-7">DELAY_IN</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.222413"
+       id="rect835-7-7-0-3-2"
+       width="35.46273"
+       height="19.824692"
+       x="227.12703"
+       y="127.56942" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.97421px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="244.51854"
+       y="136.59731"
+       id="text1240-1-2"><tspan
+         sodipodi:role="line"
+         x="244.51854"
+         y="136.59731"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan1242-9-6">DELAY AND</tspan><tspan
+         sodipodi:role="line"
+         x="244.51854"
+         y="141.56506"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.97421px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan2503-1">SCALE</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="227.36081"
+       y="144.10947"
+       id="text1246-3-2-0"><tspan
+         sodipodi:role="line"
+         x="227.36081"
+         y="144.10947"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.05;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2312-0-6">READY_IN</tspan><tspan
+         sodipodi:role="line"
+         x="227.36081"
+         y="146.71754"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.05;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2547-1">SIGNAL_IN</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="247.44139"
+       y="129.7249"
+       id="text1304-6-5"><tspan
+         sodipodi:role="line"
+         id="tspan1302-8-9"
+         x="247.44139"
+         y="129.7249"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">SCALED_OUT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="250.20049"
+       y="132.19284"
+       id="text1304-2-9-4"><tspan
+         sodipodi:role="line"
+         id="tspan1302-5-2-9"
+         x="250.20049"
+         y="132.19284"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">DONE_OUT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="227.52603"
+       y="129.73901"
+       id="text1246-3-2-7-0"><tspan
+         sodipodi:role="line"
+         x="227.52603"
+         y="129.73901"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.05;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2312-0-2-9">SCALE_IN</tspan><tspan
+         sodipodi:role="line"
+         x="227.52603"
+         y="132.34709"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.05;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2547-7-1">DELAY_IN</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="144.0137"
+       y="132.69617"
+       id="text1246-3-7"><tspan
+         sodipodi:role="line"
+         x="144.0137"
+         y="132.69617"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2312-7">CUTOFFS_IN</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.165154"
+       id="rect835-5-4-8-3"
+       width="27.712191"
+       height="17.435141"
+       x="165.95619"
+       y="95.970589" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.9742px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="179.62239"
+       y="104.62227"
+       id="text1323-0-9-6"><tspan
+         sodipodi:role="line"
+         x="179.62239"
+         y="104.62227"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.9742px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan2146-6">MERGE</tspan><tspan
+         sodipodi:role="line"
+         x="179.62239"
+         y="109.59002"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.9742px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan2725">AUDIO</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="182.89999"
+       y="112.62413"
+       id="text1412-1-3"><tspan
+         sodipodi:role="line"
+         id="tspan1410-2-9"
+         x="182.89999"
+         y="112.62413"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">SIG_OUT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="166.24521"
+       y="97.965919"
+       id="text1452-93-4"><tspan
+         sodipodi:role="line"
+         x="166.24521"
+         y="97.965919"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan1454-1-8">ANTINOISE_IN</tspan><tspan
+         sodipodi:role="line"
+         x="166.24521"
+         y="100.4498"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2747">MUSIC_IN</tspan><tspan
+         sodipodi:role="line"
+         x="166.24521"
+         y="101.63958"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2064-9-1" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="166.2963"
+       y="112.78453"
+       id="text1412-1-3-2"><tspan
+         sodipodi:role="line"
+         id="tspan1410-2-9-9"
+         x="166.2963"
+         y="112.78453"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">EN_MUSIC</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.165154"
+       id="rect835-5-4-8-3-3"
+       width="25.087538"
+       height="17.43515"
+       x="198.55466"
+       y="95.934189" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.9742px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="211.15753"
+       y="104.05449"
+       id="text1323-0-9-6-9"><tspan
+         sodipodi:role="line"
+         x="211.15753"
+         y="104.05449"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.9742px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan2725-8">PWM</tspan><tspan
+         sodipodi:role="line"
+         x="211.15753"
+         y="109.02224"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.9742px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;stroke-width:0.186291"
+         id="tspan2822">(8 BIT)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="212.72562"
+       y="112.29294"
+       id="text1412-1-3-8"><tspan
+         sodipodi:role="line"
+         id="tspan1410-2-9-5"
+         x="212.72562"
+         y="112.29294"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291">PWM_OUT</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="199.12178"
+       y="98.180458"
+       id="text1452-93-4-0"><tspan
+         sodipodi:role="line"
+         x="199.12178"
+         y="98.180458"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';stroke-width:0.186291"
+         id="tspan2064-9-1-3">SIGNAL_IN</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.165154"
+       id="rect835-5-4-2-1-6"
+       width="27.712189"
+       height="14.011434"
+       x="77.707176"
+       y="67.782364" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:9.87778px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="82.052345"
+       y="76.228157"
+       id="text2841"><tspan
+         sodipodi:role="line"
+         x="82.052345"
+         y="76.228157"
+         style="font-size:3.95111px;line-height:0.95;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan2845">VIO</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:0;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="104.99763"
+       y="70.319"
+       id="text1246-3-2-7-1"><tspan
+         sodipodi:role="line"
+         x="104.99763"
+         y="70.319"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.05;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:end;text-anchor:end;stroke-width:0.186291"
+         id="tspan2547-7-5">MUSIC_SCALE</tspan><tspan
+         sodipodi:role="line"
+         x="104.99763"
+         y="72.927071"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.05;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:end;text-anchor:end;stroke-width:0.186291"
+         id="tspan2870">MUSIC_DELAY</tspan><tspan
+         sodipodi:role="line"
+         x="104.99763"
+         y="75.535149"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.05;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:end;text-anchor:end;stroke-width:0.186291"
+         id="tspan2872">ANTI_SCALE</tspan><tspan
+         sodipodi:role="line"
+         x="104.99763"
+         y="78.143219"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.05;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:end;text-anchor:end;stroke-width:0.186291"
+         id="tspan2874">ANTI_DELAY</tspan><tspan
+         sodipodi:role="line"
+         x="104.99763"
+         y="80.751297"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;line-height:1.05;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:end;text-anchor:end;stroke-width:0.186291"
+         id="tspan2876">ERROR_CUTOFFS</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 109.13709,216.69532 h 9.16424 v -58.7057 h 12.73513"
-       id="path1500" />
+       style="fill:none;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 75.466786,125.62657 h 2.51528 v -0.96249 h 3.082586"
+       id="path3232" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 109.23311,236.88633 h 15.4418 v 2.02459 h 5.83816"
-       id="path1502" />
-    <path
-       style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 82.707206,206.59609 h 31.293514 l 0.024,13.73012 h 16.807"
-       id="path1506"
-       sodipodi:nodetypes="cccc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 130.80562,206.60474 H 118.45906"
-       id="path1508" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 131.04564,202.7755 h -4.15432 v 10.44112 h 59.0379 v 6.95608 h -4.9846"
-       id="path1510"
-       sodipodi:nodetypes="cccccc" />
+       style="fill:none;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 77.982066,125.62657 v 18.85932 h 3.182265"
+       id="path3234" />
     <circle
-       style="fill:#000000;stroke:#000000;stroke-width:0.264999"
+       style="fill:#000000;stroke:#000000;stroke-width:0.175794"
        id="path1020-2"
-       cx="118.49554"
-       cy="206.75298"
-       r="0.67631394" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 181.30849,158.02082 h 5.29162 V 146.69043 H 39.557732 v 6.15202 h 5.185799"
-       id="path1527" />
+       cx="77.981178"
+       cy="125.62736"
+       r="0.44865176" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 87.221234,206.5619 V 180.1073 H 39.15484 v -23.33425 h 5.779606"
-       id="path1529"
-       sodipodi:nodetypes="ccccc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 69.406938,173.39545 h 6.191211 v -0.0238"
-       id="path1531" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 73.052516,172.31853 -1.225624,2.12284"
-       id="path1533" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82222px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="70.856514"
-       y="177.12474"
-       id="text1537"><tspan
-         sodipodi:role="line"
-         id="tspan1535"
-         x="70.856514"
-         y="177.12474"
-         style="font-size:2.82222px;stroke-width:0.264583">16</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:4.23333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="131.15126"
-       y="132.49881"
-       id="text1543"><tspan
-         sodipodi:role="line"
-         id="tspan1541"
-         x="131.15126"
-         y="132.49881"
-         style="font-size:4.23333px;stroke-width:0.264583">analog audio</tspan><tspan
-         sodipodi:role="line"
-         x="131.15126"
-         y="137.79047"
-         style="font-size:4.23333px;stroke-width:0.264583"
-         id="tspan1545">to speaker</tspan></text>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 116.96542,235.77233 114.49,238.09654"
-       id="path1200-8" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 184.71824,218.93435 -2.47542,2.32421"
-       id="path1200-9" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 119.63811,211.31717 -2.47542,2.32421"
-       id="path1200-3" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 184.95889,156.85958 -2.47542,2.32421"
-       id="path1200-6" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82223px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="113.54075"
-       y="240.86218"
-       id="text1537-0"><tspan
-         sodipodi:role="line"
-         id="tspan1535-5"
-         x="113.54075"
-         y="240.86218"
-         style="font-size:2.82223px;stroke-width:0.264583">16</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82223px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="120.08885"
-       y="213.32626"
-       id="text1537-1"><tspan
-         sodipodi:role="line"
-         id="tspan1535-1"
-         x="120.08885"
-         y="213.32626"
-         style="font-size:2.82223px;stroke-width:0.264583">16</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82223px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="181.72426"
-       y="223.95879"
-       id="text1537-08"><tspan
-         sodipodi:role="line"
-         id="tspan1535-50"
-         x="181.72426"
-         y="223.95879"
-         style="font-size:2.82223px;stroke-width:0.264583">16</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82223px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="181.96625"
-       y="161.65373"
-       id="text1537-6"><tspan
-         sodipodi:role="line"
-         id="tspan1535-4"
-         x="181.96625"
-         y="161.65373"
-         style="font-size:2.82223px;stroke-width:0.264583">16</tspan></text>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 114.43529,153.0681 h 9.11869 v -18.4836 h 7.18408"
-       id="path1638" />
-    <rect
-       style="fill:#b3b3b3;stroke:#000000;stroke-width:0.251576;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect1642"
-       width="73.696304"
-       height="11.383338"
-       x="69.049225"
-       y="246.81389" />
-    <rect
-       style="fill:#0000ff;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect1644"
-       width="6.1024694"
-       height="6.1024694"
-       x="109.21165"
-       y="249.45433" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="118.36728"
-       y="254.99617"
-       id="text1648"><tspan
-         sodipodi:role="line"
-         id="tspan1646"
-         x="118.36728"
-         y="254.99617"
-         style="font-size:7.05556px;stroke-width:0.264583">stretch</tspan></text>
-    <rect
-       style="fill:#000000;stroke:#000000;stroke-width:0.264999;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect1644-6"
-       width="6.1024694"
-       height="6.1024694"
-       x="72.301071"
-       y="249.45433" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:7.05556px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="81.008301"
-       y="254.94452"
-       id="text1648-2"><tspan
-         sodipodi:role="line"
-         id="tspan1646-5"
-         x="81.008301"
-         y="254.94452"
-         style="font-size:7.05556px;stroke-width:0.264583">target</tspan></text>
-    <path
-       style="fill:#0000ff;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 92.549607,205.4915 -2.47542,2.32421"
-       id="path1200-3-8" />
+       d="m 75.431364,122.3362 h 3.348603 v -0.46286 h 2.272797"
+       id="path3251" />
     <path
        style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 88.540564,194.66708 -2.47542,2.32421"
-       id="path1200-3-4" />
+       d="m 75.404053,155.88038 h 3.554444 v -14.0106 h 2.24323"
+       id="path3253" />
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 108.8257,121.97662 h 3.31191"
+       id="path3255" />
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 108.88261,141.71517 h 3.41349"
+       id="path3259" />
+    <path
+       style="fill:none;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 108.93066,156.16982 h 1.47234 v -11.77894 h 1.89632"
+       id="path3261" />
+    <path
+       style="fill:none;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 140.08421,156.03918 h 1.25133 v -12.28085 h 2.05496"
+       id="path3265" />
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 140.11333,141.69786 h 2.02481 v 4.87086 h 1.29208"
+       id="path3267" />
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 178.87425,143.58408 h 4.65376 v -23.1108 h 3.24224"
+       id="path3323" />
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 139.92663,121.91798 h 44.65407 v 20.82292 h 2.22583"
+       id="path3325" />
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 186.8239,123.02477 h -2.12357"
+       id="path3327" />
+    <circle
+       style="fill:#000000;stroke:#000000;stroke-width:0.175794"
+       id="path1020-2-9"
+       cx="184.63326"
+       cy="122.93502"
+       r="0.44865176" />
+    <path
+       style="fill:none;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 178.91283,146.25298 h 2.40264 v -9.30505 h 5.4732"
+       id="path3344" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 178.87087,131.98473 h 2.58033 v -16.96139 h -17.66904 v -3.04831 h 2.1788"
+       id="path3346" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 210.76351,139.04727 -1.77735,1.77735"
+       id="path3350" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82223px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583;"
-       x="91.438759"
-       y="204.74692"
-       id="text1537-1-7"><tspan
+       style="font-style:normal;font-weight:normal;font-size:1.41111px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="211.0582"
+       y="140.54718"
+       id="text3354"><tspan
          sodipodi:role="line"
-         id="tspan1535-1-2"
-         x="91.438759"
-         y="204.74692"
-         style="font-size:2.82223px;stroke-width:0.264583;fill:#0000ff;">16</tspan></text>
+         id="tspan3352"
+         x="211.0582"
+         y="140.54718"
+         style="font-size:1.41111px;stroke-width:0.264583">64x10</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:2.82223px;line-height:1.25;font-family:sans-serif;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.264583;"
-       x="88.879013"
-       y="195.87379"
-       id="text1537-1-4"><tspan
+       style="font-style:normal;font-weight:normal;font-size:2.48388px;line-height:1.25;font-family:sans-serif;text-align:end;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.186291"
+       x="75.057655"
+       y="112.6617"
+       id="text893-8-3"><tspan
          sodipodi:role="line"
-         id="tspan1535-1-0"
-         x="88.879013"
-         y="195.87379"
-         style="font-size:2.82223px;stroke-width:0.264583;fill:#0000ff;">16</tspan></text>
+         x="75.057655"
+         y="112.6617"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.48388px;font-family:'Source Code Pro';-inkscape-font-specification:'Source Code Pro';text-align:end;text-anchor:end;stroke-width:0.186291"
+         id="tspan2060-4">READY_OUT</tspan></text>
+    <path
+       style="fill:none;stroke:#008000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 75.639519,111.86162 h 1.587278 v 3.00241 h 33.946653 v -4.33694 h 1.00432"
+       id="path3448" />
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 75.603917,97.667628 h 5.277919"
+       id="path3450"
+       sodipodi:nodetypes="cc" />
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.266273;stroke-miterlimit:4;stroke-dasharray:0.266273, 0.532547;stroke-dashoffset:0"
+       id="rect3467"
+       width="65.868004"
+       height="22.120199"
+       x="35.361282"
+       y="166.10103" />
+    <rect
+       style="fill:#ececec;stroke:#000000;stroke-width:0.266273;stroke-miterlimit:4;stroke-dasharray:2.1302, 1.06509;stroke-dashoffset:0"
+       id="rect3473-4-4"
+       width="5.2158346"
+       height="5.0794015"
+       x="37.400734"
+       y="181.07903" />
+    <g
+       id="g3553"
+       transform="matrix(0.72951396,0,0,0.72951396,5.8376162,42.950995)">
+      <rect
+         style="fill:#999999;stroke:#000000;stroke-width:0.365001;stroke-miterlimit:4;stroke-dasharray:2.92001, 1.46;stroke-dashoffset:0"
+         id="rect3473"
+         width="7.1497393"
+         height="6.9627199"
+         x="43.14402"
+         y="172.03336" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:7.76111px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="51.665157"
+         y="178.30095"
+         id="text3522"><tspan
+           sodipodi:role="line"
+           id="tspan3520"
+           x="51.665157"
+           y="178.30095"
+           style="font-size:7.76111px;stroke-width:0.264583">On FPGA</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.66183px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.193017"
+       x="43.408928"
+       y="185.65132"
+       id="text3522-7"><tspan
+         sodipodi:role="line"
+         id="tspan3520-6"
+         x="43.408928"
+         y="185.65132"
+         style="font-size:5.66183px;stroke-width:0.193017">Anti-Noise Generation</tspan></text>
+    <rect
+       style="fill:#cccccc;stroke:#000000;stroke-width:0.266273;stroke-miterlimit:4;stroke-dasharray:2.1302, 1.06509;stroke-dashoffset:0"
+       id="rect3473-4"
+       width="5.2158346"
+       height="5.0794015"
+       x="37.327927"
+       y="174.76538" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.66183px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.193017"
+       x="43.594978"
+       y="179.2401"
+       id="text3522-3"><tspan
+         sodipodi:role="line"
+         id="tspan3520-1"
+         x="43.594978"
+         y="179.2401"
+         style="font-size:5.66183px;stroke-width:0.193017">Music Processing</tspan></text>
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.266273;stroke-miterlimit:4;stroke-dasharray:0.266273, 0.532546;stroke-dashoffset:0"
+       id="rect3467-7"
+       width="53.76276"
+       height="16.038794"
+       x="105.30194"
+       y="166.11563" />
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:0.493;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 107.39452,173.04955 h 1.90204 v -3.61512 h 1.93838"
+       id="path3578" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.14713px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.193017"
+       x="112.17387"
+       y="172.72166"
+       id="text3582"><tspan
+         sodipodi:role="line"
+         id="tspan3580"
+         x="112.17387"
+         y="172.72166"
+         style="font-size:5.14713px;stroke-width:0.193017">16-bit signed signal</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text3584"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect3586);fill:#000000;fill-opacity:1;stroke:none;" />
+    <path
+       style="fill:none;stroke:#008000;stroke-width:0.493;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 107.34613,178.99813 h 1.90204 v -3.61512 h 1.93838"
+       id="path3578-5" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.14713px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.193017"
+       x="112.1255"
+       y="178.67024"
+       id="text3582-9"><tspan
+         sodipodi:role="line"
+         id="tspan3580-6"
+         x="112.1255"
+         y="178.67024"
+         style="font-size:5.14713px;stroke-width:0.193017">1-bit &quot;ready&quot; signal</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 223.64196,111.59532 h 44.74232"
+       id="path3611" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="269.30191"
+       y="112.38316"
+       id="text3615"><tspan
+         sodipodi:role="line"
+         id="tspan3613"
+         x="269.30191"
+         y="112.38316"
+         style="font-size:3.52778px;stroke-width:0.264583">speaker</tspan></text>
   </g>
 </svg>
