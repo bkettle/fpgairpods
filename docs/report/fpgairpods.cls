@@ -1,7 +1,7 @@
-\LoadClass[11pt, titlepage]{article}
+\LoadClass[12pt]{article}
 \ProvidesClass{fpgairpods}[2020/10/25 6.111 Team 25 Document Template]
 
-\RequirePackage[explicit]{titlesec}
+\RequirePackage{titlesec}
 \RequirePackage{enumitem}
 \RequirePackage{times}
 \RequirePackage{helvet}
@@ -12,7 +12,9 @@
 \RequirePackage{lipsum}
 \RequirePackage{listings}
 \RequirePackage{graphicx}
+\RequirePackage{rotating}
 \RequirePackage{fancyhdr}
+\RequirePackage{pgfplots}
 \RequirePackage[%  
     colorlinks=true,
     pdfborder={0 0 0},
@@ -27,14 +29,15 @@
 \RequirePackage{textcomp}
 \RequirePackage{placeins}
 
-\titleformat{\section}
-  {\normalfont\fontsize{12}{15}\bfseries}{\thesection \quad \MakeUppercase{#1}}{1em}{}
-\titleformat{\subsection}
-  {\normalfont\fontsize{10}{12}\bfseries}{\thesubsection \quad \MakeUppercase{#1}}{1em}{}
-\titleformat{\subsubsection}
-  {\normalfont\fontsize{10}{12}\bfseries}{#1}{1em}{}
-\titlespacing{\section}{0pt}{10pt}{6pt}
-\titlespacing{\subsection}{0pt}{10pt}{0pt}
-\titlespacing{\subsubsection}{0pt}{4pt}{0pt}
+
+%\titleformat{\section}
+%  {\normalfont\fontsize{12}{15}\bfseries}{\thesection \quad \MakeUppercase{#1}}{1em}{}
+%\titleformat{\subsection}
+%  {\normalfont\fontsize{10}{12}\bfseries}{\thesubsection \quad \MakeUppercase{#1}}{1em}{}
+%\titleformat{\subsubsection}
+%  {\normalfont\fontsize{10}{12}\bfseries}{#1}{1em}{}
+%\titlespacing{\section}{0pt}{10pt}{6pt}
+%\titlespacing{\subsection}{0pt}{10pt}{0pt}
+%\titlespacing{\subsubsection}{0pt}{4pt}{0pt}
 
 \newcommand{\ttt}[1]{{\tt \detokenize{#1}}}
