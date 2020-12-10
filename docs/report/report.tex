@@ -9,7 +9,7 @@
 \begin{document}
 
 \title{\textit{FPGAirPods}: Implementing Active Noise Cancellation on a Xilinx Nexys7 FPGA}
-\date{\textit{Massachusetts Institute of Technology} \\ \today}
+\date{6.111 Introductory Digital Systems Laboratory \\ \textit{Massachusetts Institute of Technology} \\ \today}
 \author{Ben Kettle \\ \ttt{bkettle@mit.edu} 
 \and Nicholas Ramirez \\ \ttt{ramirezn@mit.edu} \and Gokul Kolady \\ \ttt{gokulk@mit.edu}}
 
@@ -42,7 +42,7 @@ The FPGA itself will handle the computational side of the active noise cancellat
 \newpage
 \section{Hardware Testing Setup (Ben)}
 \subsection{Testing Hardware (Ben)}
-In order to demonstrate that our system was functional, a system to test on was crucial. This system would include the FPGA as a processing center with a variety of peripherals.
+In order to demonstrate that our system was functional, a system to test on was crucial. This system would include the FPGA as a processing center with a variety of peripherals, as shown in Figure \ref{fig:peripherals}.
 
 \begin{figure}[h]
 \centering
@@ -117,9 +117,13 @@ receives music
 mixes audio
 
 \section{Challenges}
-This project had many challenges.
+\subsection{Feedback}
+Our initial hardware testbench did not include as much passive cancellation as our final design. When we tried 
 
-\section{Reflections}
+\subsection{Speaker Limitations}
+In our testing, we noticed that the frequency response of our speaker was not flat, particularly at low frequencies. Include a graph here.
+
+\section{Reflections and Recommendations}
 
 \section{References}
 
