@@ -1,4 +1,4 @@
-\LoadClass[10pt, titlepage]{article}
+\LoadClass[11pt, titlepage]{article}
 \ProvidesClass{fpgairpods}[2020/10/25 6.111 Team 25 Document Template]
 
 \RequirePackage[explicit]{titlesec}

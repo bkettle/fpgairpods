@@ -18,26 +18,27 @@
 
 \newpage
 \begin{multicols}{2}
-\section{Introduction}
+\section{Introduction and Motivation}
 
-	Noise cancellation is in demand. At the time of writing this, Apple has just released AirPods Max for \$550.
+Noise cancellation is in demand. At the time of writing this, Apple has just released AirPods Max for \$550.
 
-\section{Overview}
-Our 6.111 final project aims to implement active noise cancellation as seen in over-ear and in-ear headphones such as the Bose QC35 and the AirPods Pro (hence the name). In order to do this, we will first need to create a physical model of a single headphone (one ear cup) that we will use to test. Inside the ear cup, we will install a speaker (far from the ear) and a digital microphone (closer to the ear). We will also use a digital microphone external to the ear cup in order to capture ambient noise.
+\section{Project Overview} % talk about how the system works right now, here is where we should put graphs of cancellation effectiveness at different frequencies
+% I think we can generate those graphs by making a python script to analyze ILA output and give the average amplitude of the wave, then we just compare these to find a dB cancelled
+Our 6.111 final project aimed to implement active noise cancellation as seen in over-ear and in-ear headphones such as the Bose QC35 and the AirPods Pro (hence the name). In order to do this, we first created a physical model of a single headphone (one ear cup) that we used to test. Inside the ear cup, we installed a speaker (far from the ear) and a feedback digital microphone (closer to the ear). In addition, we used a digital microphone external to the ear cup in order to capture ambient noise. To prevent feedback issues, we lined the inside of the model with
 
-The FPGA itself will handle the computational side of the active noise cancellation. This will primarily involve an adaptive filter that will continually improve its coefficients in order to minimize the error function --- i.e., the noise that makes it through and is not cancelled out. We run the input from the external microphone through this filter, and play the filtered result out of the speaker with the aim of cancelling noise.
+The FPGA itself handles the computational side of the active noise cancellation. The general flow of the system starts with sampling the incoming signal from the microphones, processing the samples, and outputting the anti-noise signal. We sample the microphones at a rate of 65 kHz which means our maximum target latency is 5830 clock cycles. 
 
+The logic behind utilizing this sampling rate was to allow enough time for us to sample an outside signal from the ambient microphone, apply a filter to create the anti-noise signal, and output that anti-noise signal before the outside signal reaches the speaker. Since the ambient microphone is about 2 cm away from the speaker and noise travels around 332 meters per second, we have around 60.241 microseconds. 
+
+For processing the samples, we used the Normalized Least Mean Squares (NLMS) adaptive filter to continually calculate coefficients that aim to minimize the error function --- i.e., the noise that makes it through and is not cancelled out. These updated coefficients are then applied to the input ambient sample by a Finite Impulse Response (FIR) filter and played out the speaker to cancel the noise. 
 
 \end{multicols}
-
-
 
 \begin{figure}
 \includegraphics[width=\textwidth]{./figs/block_diagram.pdf}
 \caption{The high-level block diagram for our system.}
 \label{fig:blockdiagram}
 \end{figure}
-
 
 \newpage
 \section{Hardware Testing Setup (Ben)}
@@ -58,7 +59,15 @@ Our implementation was structured as a series of modules each applying some proc
 This module is the origin of the \ttt{ready_in} pulse chain described above---it implements the I2S protocol as described in the datasheet for the microphones we use\autocite{mic_datasheet}. In essence, this requires the creation of an \ttt{LRCLK} signal that controls whether the left (ambient) or right (feedback) mic will currently transmit. For every change of this clock, the corresponding microphone would begin sending a new sample. We drove this clock at the 4MHz, the maximum rate tolerated by the microphones, for a sampling rate through our system of 65 kHz.
 
 \subsection{FIR Filter - \textit{Niko}}
-The FIR Filter module convolves the external ambient noise with a set of filter coefficients in order to produce an anti-noise signal. This anti-noise signal is later used to cancel out the ambient noise that makes it into the ear cup. These coefficients are set continuously by the LMS adaptive algorithm module.
+The FIR Filter module convolves the external ambient noise with a set of filter coefficients in order to produce an anti-noise signal. Our module uses 64 taps
+
+The filter calculation requires forming the following sum:
+
+$$ y[n] = \sum_{i=0}^{63} (c_i * x[n-i]) $$
+
+
+
+These coefficients are set continuously by the LMS adaptive algorithm module.
 \subsubsection{Inputs}
 \begin{itemize}
     \item \ttt{external_signal_in[15:0]}: The current sample from the external microphone that will be filtered.
@@ -95,7 +104,7 @@ To implement this operation, we will need to store the last $M$ noise inputs fro
 Testing this module will be a bit more involved than some of the others due to its not well-defined behavior, but in order to test the behavior we will need to have a working FIR module. With this module in place, we can then test the ability of the LMS algorithm to recreate the coefficients of a given filter. In other words, we can have our "desired" signal be the result of passing some input through an arbitrary filter, use this desired signal to calculate the error $e(n)$, and pass this error into our LMS module. If the input of the LMS module is the same as the input to this mystery filter, we can conclude that the LMS algorithm is functioning as necessary.
 
 \subsection{Error Calculator - \textit{Gokul}}
-The error calculator module monitors the error our system encounters in order to pass it into the NLMS.
+The error calculator module monitors the error our system encounters in order to pass it into the NLMS. At first, this module's function was simply to negate the feedback microphone signal (post-processing) and hand it off to the NLMS algorithm, 
 
 \subsubsection{Inputs}
 \begin{itemize}
@@ -108,7 +117,9 @@ The error calculator module monitors the error our system encounters in order to
 \end{itemize}
 
 \subsection{DC Remover (Gokul)}
-removes dc
+Early on in our project, we realized that both of the microphone signals that our system received were centered somewhere in around -1780 to -1830. Additionally, when playing a sine tone from our external speaker, we would occasionally notice a small low-frequency oscillation in the DC offset of the sine tone when picked up by the digital microphones. We realized that the former issue would cause our NLMS algorithm to take an unnecessary extra amount of time to converge, as it would first have to learn that the input is centered around some very low negative value before performing any meaningful learning regarding the nature of the input signal. As for the latter issue, we figured that these small oscillations in DC offset would likely cause the error in the system to waiver slightly even after convergence.
+
+To account for these problems, we implemented a module that removes the DC offsets present in the microphone inputs in order to center these signals closer to 0. The module itself takes in raw samples from the I2S module (pre-lowpass) and outputs these samples with the average of the last 64 raw samples subtracted from them (this average being an approximation of DC offset based on recent input). The sum of the most recent 64 raw samples is maintained in a 22-bit variable, and the average is computed by extracting bits 21 though 6 of that sum variable, effectively dividing the sum by 64. One potential drawback of using this process to remove unwanted DC offset from our signal is that low frequencies are somewhat penalized, as every set of 64 samples is re-adjusted even though some of the offset present in these samples might be a product of the oscillations caused by these low frequencies. In other words, if cancellation of lower frequencies within input noise is desired, this module would likely need to be adjusted to accommodate them.
 
 \subsection{Music Receiver (Ben)}
 receives music
@@ -119,6 +130,12 @@ mixes audio
 \section{Challenges}
 \subsection{Feedback}
 Our initial hardware testbench did not include as much passive cancellation as our final design. When we tried 
+
+\subsection{Microphone Noise}
+
+\subsection{Choosing LMS Step Size Empirically}
+
+\subsection{Instability of NLMS Convergence}
 
 \subsection{Speaker Limitations}
 In our testing, we noticed that the frequency response of our speaker was not flat, particularly at low frequencies. Include a graph here.
