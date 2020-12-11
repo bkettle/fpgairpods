@@ -37,7 +37,7 @@ In effect, this meant that our FIR filter would be characterizing the frequency 
 
 The FPGA itself handles the computational side of the active noise cancellation. The general flow of the system starts with sampling the incoming signal from the microphones, processing the samples, and outputting the anti-noise signal. We decided on a sampling rate of 65 kHz as it is the maximum sampling rate supported by the microphones. In terms of logistics for the FPGA timing, we based our target latency on the time it takes for a sound signal to travel from the ambient microphone to the speaker. Since the ambient microphone is about 2 cm away from the speaker and sound travels around 343 meters per second, we have around 5830 clock cycles to make all of our computations and output an anti-noise signal. In figure \ref{fig:systemlatency}, we can see that our final system latency was well within this bound, taking around 130 clock cycles output anti-noise for a sample after initially receiving it.
 
-\begin{figure}[h]
+\begin{figure}
 \centering
 \includegraphics[width=300pt]{./figs/system_latency_ila.png}
 \caption{System latency (clock cycles necessary to process a sample and output anti-noise)}
@@ -86,11 +86,16 @@ We chose to use digital microphones that communicate over I2S in our system. Usi
 
 For our speaker, we chose to use a consumer portable speaker in order to reduce hardware complexity. This speaker had a built in amplifier, which allowed us to drive it using the Nexys4-DDR's onboard headphone jack and DAC without need for additional electronics. One disadvantage of this, however, was that another variable was added in the controls on the speaker itself. Specifically, the speaker was battery-powered, and had a stateful volume control. This presented two challenges---we had to ensure that the charge level of the speaker was consistent and that the volume was consistent across our trials in order to isolate changes to our HDL implementation. To standardize our testing setup, we made sure to always keep the speaker plugged in to a USB port to ensure it was at full charge, and made sure that we turned the volume all the way down before turning it up 7 clicks to standardize the volume. % talk about difficulty with digital volume control, standardizing the volume that the speaker played at in order to allow full use of our coefficient resolution, as well as mounting the speaker to be in line with the microphones and to be able to charge it and give the signal without difficulty
 
-\bigskip
-
 Besides electronic peripherals, our testing system included several other materials. We identified the need for passive cancellation early on, both to ensure that the difference caused by our ANC implementation is audible, and to prevent the speaker output from reaching the ambient noise microphone causing a feedback loop. In our initial design, we had planned for only the inner container seen in Figure \ref{fig:peripherals}. However, we found that this system was far too susceptible to feedback loops, and that any deviation from the anti-noise signal by the speaker would cause the system to fail.
 
-Further, in contrast to commercial ANC implementations that are able to have finely tuned and compact mechanical designs, our prototype was far from small. A crucial piece of the theory behind ANC is that ANC is possible only if the anti-noise source (the speaker) is located very close to the noise source---we saw an example of this in ANC from within air ducts---or very close to the receiver---this is the model that headphones with ANC use, and indeed that we were hoping to implement as well. This requirement is caused by the fact that it is only possible to accurately anticipate noise signals that are parallel to the axis of the system---if a sound is coming from an angle, the system will be unable to anticipate the wave's behavior when it crosses the speaker and when it reaches the receiver (ear). This is because without additional microphones, the system does not have enough information to determine the angle from which a wave is approaching. Given both of these issues, we iterated on our design for the enclosure itself, adding additional passive cancellation in the form of the outer foam-lined box seen in Figure \ref{fig:peripherals}. From this box, we cut out a port at the back of our inner enclosure to allow sound waves in line with the axis of our speaker to enter our system, but prevent those at other angles. This allowed us to emulate the benefits of the small form factor of commercial ANC headphones without precision machining and fabrication techniques, and prevented the output of the speaker from reaching the ambient noise microphone.
+Further, in contrast to commercial ANC implementations that are able to have finely tuned and compact mechanical designs, our prototype was far from small. A crucial piece of the theory behind ANC is that ANC is possible only if the anti-noise source (the speaker) is located very close to the noise source---we saw an example of this in ANC from within air ducts---or very close to the receiver---this is the model that headphones with ANC use, and indeed that we were hoping to implement as well. This requirement is caused by the fact that it is only possible to accurately anticipate noise signals that are parallel to the axis of the system---if a sound is coming from an angle, the system will be unable to anticipate the wave's behavior when it crosses the speaker and when it reaches the receiver (ear). This is because without additional microphones, the system does not have enough information to determine the angle from which a wave is approaching. Given both of these issues, we iterated on our design for the enclosure itself, adding additional passive cancellation in the form of the outer foam-lined box seen in Figure \ref{fig:peripherals}. From this box, we cut out a port at the back of our inner enclosure to allow sound waves in line with the axis of our speaker to enter our system, but prevent those at other angles. This allowed us to emulate the benefits of the small form factor of commercial ANC headphones without precision machining and fabrication techniques, and prevented the output of the speaker from reaching the ambient noise microphone. In order to quantify this passive cancellation, we played a series of tones and compared the amplitudes of the ambient and feedback microphones. The amount of cancellation from ambient to feedback microphone that this analysis showed can be seen in figure \ref{chart:passive_response}.
+
+\begin{figure}
+\centering
+\includegraphics[width=\textwidth]{./figs/enclosure_photos.png}
+\caption{Images of testing hardware}
+\label{fig:systempics}
+\end{figure}
 
 % graph of passive cancellation of various frequencies? Compare ambient and feedback mic with NC off, we will have to take these samples anyway
 
@@ -112,15 +117,15 @@ Further, in contrast to commercial ANC implementations that are able to have fin
         \end{axis}
     \end{tikzpicture}
     \caption{Difference between ambient and feedback signals with ANC off}
-    \label{chart:anc_freq_response}
+    \label{chart:passive_response}
 \end{figure}
 
 \subsection{Music Playing Hardware (Ben)}
 In order to enable us to play music  through the speaker as well as the anti-noise signal, we needed some way to input music into the system. To do this, we used a 3.5mm headphone jack breakout board as well as a small amount of circuitry to center the signal around 0.5V in order to make it compatible with the ADC's 0-1V range.
 
-\begin{figure}[h]
+\begin{figure}
 \centering
-\includegraphics[width=300pt]{./figs/system_diagram_with_text.pdf}
+\includegraphics[width=450pt]{./figs/system_diagram_with_text.pdf}
 \caption{The peripherals that will be included in our project}
 \label{fig:peripherals}
 \end{figure}
