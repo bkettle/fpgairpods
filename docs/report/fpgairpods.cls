@@ -28,7 +28,7 @@
 ]{biblatex}
 \RequirePackage{textcomp}
 \RequirePackage{placeins}
-\RequirePackage[nottoc,numbib]{tocbibind}
+
 
 \setlength{\abovecaptionskip}{10pt plus 3pt minus 2pt}
 %\setlength{\belowcaptionskip}{15pt plus 3pt minus 2pt}

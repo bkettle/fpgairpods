@@ -6,6 +6,14 @@
 
 \setlist{noitemsep, topsep=0pt}
 
+\makeatletter
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Page \thepage}
+\lhead{FPGAirPods}
+\fancyhead[C]{\nouppercase\leftmark}
+\makeatother
+
 \begin{document}
 
 \title{\textit{FPGAirPods}: Implementing Active Noise Cancellation on a Xilinx Artix-7 FPGA}
@@ -22,7 +30,7 @@
 
 Noise cancellation is clearly in demand---at the time of writing this, Apple has just released AirPods Max for \$550, and active noise cancellation can be found everywhere from air ducts to cars. However, it's often treated as a black box---our team was interested in looking inside this black box to learn about the intricacies of implementing active noise cancellation on a real system. Further, we were all interested in audio processing and hoped to take advantage of the FPGA's ability to perform operations quickly and in parallel for our 6.111 final project.
 
-Implementing active noise cancellation as seen in over-ear and in-ear headphones such as the Bose QC35 and the AirPods Pro (our project's namesame), then, seemed like a great choice that would allow us to combine all these interests.
+Implementing active noise cancellation as seen in over-ear and in-ear headphones such as the Bose QC35 and the AirPods Pro (our project's namesake), then, seemed like a great choice that would allow us to combine all these interests.
 
 We knew going into the project that it would be difficult, and one of the things that made it particularly difficult would be the need for solid test hardware and reliance on that hardware to achieve any form of functionality. Indeed, this proved to be the case, and we ran into several difficulties along the way, as we will describe in this report. Despite these difficulties, we learned more than we could've hoped about the importance of defining modules clearly, testbenching to avoid wasting long compile time, and more, in the end building an end result that we are proud of.
 
@@ -197,7 +205,7 @@ We initially used this simulation to determine whether our code was functional b
 
 The other meaningful change we made to this simulation was the addition of the \ttt{cup_simulator} module. This module was purely used for testing, and takes advantage of the \ttt{delay_and_scale} module in order to apply an artificial delay and scale to the input noise. This allowed for the test bench to account for the time it takes for sound to travel from the ambient microphone to the speaker in our physical system and the scaling that results from the input noise passing through the cup/box enclosure.
 
-In figure \ref{fig:sinenoisesimulation}, we can see the result of the simulation when conducted on sine noise taken from an ILA sample. Figure \ref{fig:ambientnoisesimulation} is the result of the simulation when ran on an ILA sample of ambient noise recorded on an airplane \textbf{CITE YOUTUBE LINK}. In both figures, \ttt{x_in[15:0]} is the respective ILA noise sample, \ttt{lowpass_out[15:0]} is the low-passed version of the noise signal, \ttt{y_out} is the anti-noise our code produces, and \ttt{cup_sum_feedback[15:0]} is a representation of the the noise that would still make it to the feedback microphone in our simulated system post-ANC.
+In figure \ref{fig:sinenoisesimulation}, we can see the result of the simulation when conducted on sine noise taken from an ILA sample. Figure \ref{fig:ambientnoisesimulation} is the result of the simulation when ran on an ILA sample of ambient noise recorded on an airplane \cite{airplane}. In both figures, \ttt{x_in[15:0]} is the respective ILA noise sample, \ttt{lowpass_out[15:0]} is the low-passed version of the noise signal, \ttt{y_out} is the anti-noise our code produces, and \ttt{cup_sum_feedback[15:0]} is a representation of the the noise that would still make it to the feedback microphone in our simulated system post-ANC.
 
 \begin{figure}
 \centering
@@ -257,7 +265,6 @@ In our testing, we noticed that the frequency response of our speaker was not fl
 % invest in a testbench early on that is as accurate as possible. We got stuck waiting for parts, and having a better testbench would have helped us continue to make progress while waiting for parts and while constructing and debugging the physical system and its interfaces
 
 % create a consistent interface for your modules, especially if they perform similar functions like our processing modules did. This allows much easier modification of the pipeline later to insert new modules, remove modules, or change the ordering. We added several modules over the course of our project, and if we had not done this, we would have had to rewrite modules to fit the new ones they were connected to.
-
 Though we did not achieve our goal of effective ambient noise cancellation, we believe we implemented our base goal of sine tone cancellation very effectively, and we are proud of that. We learned about everything from signal processing to how physical systems behave and the many variables that we have to do our best to control when working with physical systems, and became much more familiar with FPGAs, their many uses, and the different mindset required to write HDL rather than software code. These differences were especially apparent in constructing our audio pipeline---we needed to ensure that each module finished before the next began, and also had some modules working in parallel. For example, our implementation included one chain working on feedback mic input, and one working on ambient mic input. Thinking about the timing and latency of different modules was crucial here to know which \ttt{done_out} signal would occur later and to ensure that we would be dealing with valid data and not have the pipelines out of sync. 
 
 
@@ -265,9 +272,9 @@ Though we did not achieve our goal of effective ambient noise cancellation, we b
 Our first recommendation to anyone trying to replicate or build upon this project would be to benchmark the physical setup early on in the process. We discovered that the frequency response of our speaker was significantly inconsistent somewhat late in our project, and thus weren't able to account for this as much as we would have liked to. Doing some in-depth testing to understand the limitations of the physical setup and equipment is crucial in designing an ideal noise-cancellation strategy. Furthermore, it is vital to ensure that maximal sound-isolation is achieved where necessary in the physical enclosure used for testing. The initial iteration of our enclosure had an undesirable amount of sound leakage, with the sound outputted by the speaker reaching the ambient microphone, in essence creating a feedback loop that prevented our system from doing any cancellation. Once we built a more robust enclosure for the speaker and feedback microphone, we started to achieve meaningful results in our testing. In other words, constructing a solid enclosure and understanding the limits of your physical setup is a surefire way to catalyze progress on your noise-cancelling implementation.
 
 
-Our second recommendation would be to invest in a test bench early on that is as accurate as possible. We discovered that having an accurate test bench that utilizes an input from a recorded ILA waveform from the physical system was super helpful and saved a lot of time. It allows you to make changes to your modules and test on real input without having to generate a bitstream. Furthermore, there are several aspects of the physical system that can be modeled in simulation, and including these aspects early on will help in understanding what exactly the NLMS algorithm must do to effectively converge on input noise. We, for example, created a cup simulator in our 
+Our second recommendation would be to invest in a test bench early on that is as accurate as possible. We discovered that having an accurate test bench that utilizes a recorded ILA waveform from the physical system as input was super helpful and saved a lot of time. It allows you to make changes to your modules and test on real input without having to generate a bitstream. Furthermore, there are several aspects of the physical system that can be modeled in simulation, and including these aspects early on will help in understanding what exactly the NLMS algorithm must do to effectively converge on input noise. We, for example, created a cup simulator that allowed us to simulate the delay between the ambient microphone and the speaker creates and the scaling the physical enclosure applies to the noise that passes through it. A valuable extension to this cup simulator would be an FIR that models the frequency response of the physical setup, as this is a factor that has important implications on the ability of the NLMS to effectively converge on input noise.
 
-Our last recommendation would be to create a consistent interface for your modules, especially if they perform similar functions like our processing modules. Over the course of the project, we had to insert new modules and remove modules within our pipeline. If we didn't create a consistent interface, it would have made these modifications much more difficult as we would have needed to rewrite the modules to fit the new connections. 
+Our last recommendation would be to create a consistent interface for your modules, especially if they perform similar functions like our processing modules. Over the course of the project, we had to insert new modules and remove modules within our pipeline. If we didn't create a consistent interface, it would have made these modifications much more difficult as we would have needed to rewrite the modules to fit the new connections.
 
 \appendix
 \section{GitHub Repository}
